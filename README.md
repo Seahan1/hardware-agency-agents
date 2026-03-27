@@ -1,41 +1,94 @@
 # hardware-agency-agents
 
-面向硬件研发场景的技能仓库，按工程职责拆分为可直接复用的专家型 skill 文档。每个 skill 都聚焦一个明确岗位，覆盖角色边界、关键约束、工作流程、沟通风格与交付要求，目标不是提供泛泛而谈的百科说明，而是让代理或协作者在进入具体任务时，立即切换到对应的工程判断框架。
+[English](./README.md) | [简体中文](./README.zh-CN.md)
 
+![License](https://img.shields.io/badge/license-MIT-green)
+![Skills](https://img.shields.io/badge/skills-47-blue)
+![Domains](https://img.shields.io/badge/domains-8-orange)
+![Language](https://img.shields.io/badge/language-bilingual-purple)
 
-## 公开发布说明
+Are you already used to AI giving hardware advice with great confidence while clearly not understanding hardware at all?
 
-- 本仓库是硬件研发场景下的 skill 文档集合，不是任何单一 Agent 平台的官方内置仓库
-- 这些内容用于角色切换、设计讨论、评审约束和工程分析，不构成对具体项目结论的自动担保
-- 使用者仍需结合器件手册、标准规范、实测数据和项目边界自行验证
-- 本仓库与 ST、TI、NXP、ADI、Altium、KiCad 及其他厂商或平台无官方从属关系
+If you are tired of suggestions like "just make the ground trace wider" or "place the capacitor anywhere first and tune it later", this repository is built for you.
 
-## 仓库概览
+`hardware-agency-agents` is an open-source library of hardware engineering skills organized by real engineering roles. Each skill document focuses on a specific role boundary, technical constraints, workflows, communication style, and expected deliverables, so hardware tasks can be approached with more rigorous engineering judgment instead of generic assistant-style advice.
 
-- 47 个硬件相关 skill
-- 8 个专业方向
-- 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
-- 适合用于方案评审、原理图检查、PCB 约束梳理、调试定位、验证策划、量产导入与跨团队协作
+This repository is inspired by the organizational clarity of strong skill libraries, but all content here is written around the actual files in this repository, with a focus on Chinese hardware engineering practice, board-level constraints, and production-oriented design thinking.
 
-## 适合怎么用
+## 📚 Table of Contents
 
-你可以把这里的每个 `.md` 文件理解为一个“专业角色模板”：
+- [Why This Repo Exists](#-why-this-repo-exists)
+- [Quick Start](#-quick-start)
+- [Public Notes](#-public-notes)
+- [Overview](#-overview)
+- [How To Use](#-how-to-use)
+- [Repository Structure](#-repository-structure)
+- [Skill Index](#-skill-index)
+- [How To Choose A Skill](#-how-to-choose-a-skill)
+- [What Makes This Repository Different](#-what-makes-this-repository-different)
+- [License](#-license)
+- [Contributing](#-contributing)
+- [GitHub Checks](#-github-checks)
 
-1. 当任务边界明确时，直接选择对应 skill 作为主角色。
-2. 当问题跨领域时，先选主 skill，再补充 1 到 2 个强相关 skill 联合分析。
-3. 当任务进入设计评审、问题闭环或量产导入阶段时，优先使用强调约束、验证和工程输出的 skill，而不是只看功能实现。
+## 🧠 Why This Repo Exists
 
-典型示例：
+Most AI systems can talk about electronics, but that does not mean they can reason like a real hardware engineer.
 
-- 做 STM32 控制板原理图评审：优先使用 `STM32硬件工程师`，必要时补充 `PCB硬件工程师` 与 `EMC硬件工程师`
-- 做 Buck 电源稳定性与热设计分析：优先使用 `电源硬件工程师`
-- 做高速板卡布局与阻抗约束梳理：优先使用 `高速PCB工程师` 或 `SI/PI工程师`
-- 做 EVT/DVT 阶段验证收敛：优先使用 `硬件验证工程师` 或 `EVT/DVT工程师`
+This repository exists to narrow that gap:
 
-## 目录结构
+- turn generic AI assistance into role-based hardware reasoning
+- make constraints, failure mechanisms, verification logic, and deliverables explicit
+- reduce low-quality advice that ignores physics, manufacturability, EMC, safety, and production reality
+- provide reusable specialist roles for real board-level engineering workflows
+
+## ⚡ Quick Start
+
+1. Pick the closest skill for your task from the index below.
+2. Read that skill as the primary engineering role.
+3. Add one or two adjacent skills when the task crosses domains.
+4. Use the skill content to frame review comments, design constraints, debug hypotheses, and validation plans.
+
+Suggested starting points:
+
+- Board implementation: `PCB硬件工程师`
+- STM32 boards: `STM32硬件工程师`
+- Power design: `电源硬件工程师`
+- EMC and corrective action: `EMC硬件工程师`
+- Validation closure: `硬件验证工程师`
+
+## 📢 Public Notes
+
+- This repository is a collection of hardware skill documents, not an official built-in library for any single agent platform
+- The content is intended for role selection, design discussion, review guidance, and engineering analysis, not as an automatic guarantee of project correctness
+- Users should still validate all conclusions against datasheets, standards, measurements, and project-specific constraints
+- This repository is not officially affiliated with ST, TI, NXP, ADI, Altium, KiCad, or other vendors and platforms mentioned in hardware workflows
+
+## 📦 Overview
+
+- 47 hardware-related skills
+- 8 engineering domains
+- Coverage across PCB implementation, embedded hardware, power, EMC/compliance, validation, SoC/FPGA platforms, and communication interfaces
+- Suitable for schematic review, PCB constraint analysis, debug work, validation planning, and production-readiness discussions
+
+## 🧭 How To Use
+
+You can treat each `.md` file in this repository as a reusable specialist role template:
+
+1. When the task boundary is clear, choose the most relevant skill as the primary role.
+2. When the problem crosses domains, choose one primary skill and add one or two closely related supporting skills.
+3. When the task is in review, validation, debug, or production handoff stages, prefer skills that emphasize constraints, verification, and deliverables instead of pure functional discussion.
+
+Typical examples:
+
+- STM32 control board schematic review: start with `STM32硬件工程师`, optionally add `PCB硬件工程师` and `EMC硬件工程师`
+- Buck converter stability and thermal analysis: start with `电源硬件工程师`
+- High-speed board layout and impedance constraints: start with `高速PCB工程师` or `SI/PI工程师`
+- EVT/DVT validation closure: start with `硬件验证工程师` or `EVT/DVT工程师`
+
+## 🗂️ Repository Structure
 
 ```text
-hardware-agents/
+hardware-agency-agents/
 ├── PCB 与板级实现方向/
 ├── 可靠性 EMC 安规方向/
 ├── 嵌入式硬件方向/
@@ -46,141 +99,147 @@ hardware-agents/
 └── 通信与接口方向/
 ```
 
-说明：
+Notes:
 
-- 各方向目录下的 `.md` 文件即对应 skill 主体
-- 根目录额外保留了一个 `PCB硬件工程师.md` 镜像文件，可按需统一收口或后续清理
+- Each `.md` file under the domain folders is a skill document
+- The repository root currently also contains a mirrored `PCB硬件工程师.md` file
 
-## Skill Index
+## 🧰 Skill Index
 
-### PCB 与板级实现方向（9）
+### PCB and Board-Level Implementation (9)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [DFA工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 可装配性设计优化，关注焊接风险、器件间距、装配方向与返修性 |
-| [DFM工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFM%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 可制造性审查与制造规则分析，覆盖工艺边界与投板数据检查 |
-| [PCB Layout工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%20Layout%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 布局布线设计与约束管理，强调层叠、阻抗、过孔与回流路径 |
-| [PCB封装库工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E5%B0%81%E8%A3%85%E5%BA%93%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 器件封装库、焊盘规则、3D 模型与标准化命名体系建设 |
-| [PCB硬件工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 从原理图到 PCB 落地的板级实现总角色，兼顾 SI、PI、EMC、DFM 与资料输出 |
-| [SI/PI工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/SIPI%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 信号完整性与电源完整性建模、仿真、定位与整改 |
-| [射频硬件工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E5%B0%84%E9%A2%91%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | RF 前端、阻抗匹配、天线协同与射频调试 |
-| [硬件工艺工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E8%89%BA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SMT/DIP、焊接工艺、制造导入与失效协同 |
-| [高速PCB工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9FPCB%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速板卡设计、差分等长、阻抗与串扰控制 |
+| [DFA工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Design for assembly, soldering risk, component spacing, orientation, and reworkability |
+| [DFM工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFM%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Design for manufacturability, process limits, panelization, via process, and fabrication data review |
+| [PCB Layout工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%20Layout%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Layout and routing quality, stackup planning, constraints, impedance, vias, and return paths |
+| [PCB封装库工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E5%B0%81%E8%A3%85%E5%BA%93%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Footprint library quality, pad rules, 3D models, and naming standards |
+| [PCB硬件工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | End-to-end board implementation from schematic to manufacturable PCB with SI, PI, EMC, DFM, and outputs |
+| [SI/PI工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/SIPI%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Signal integrity and power integrity modeling, simulation, diagnosis, and correction |
+| [射频硬件工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E5%B0%84%E9%A2%91%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | RF front-end implementation, impedance matching, antenna coordination, and RF debug |
+| [硬件工艺工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E8%89%BA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SMT/DIP process, manufacturing introduction, and process coordination |
+| [高速PCB工程师](./PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9FPCB%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | High-speed board constraints, differential routing, length matching, impedance, and crosstalk control |
 
-### 可靠性 EMC 安规方向（8）
+### Reliability, EMC, and Compliance (8)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [EMC硬件工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMC%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMC 设计、整改与板级到系统级闭环 |
-| [EMI整改工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMI%E6%95%B4%E6%94%B9%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMI 问题定位、干扰源分析与高频整改落地 |
-| [ESD防护工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/ESD%E9%98%B2%E6%8A%A4%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 静电防护方案、TVS 选型、泄放路径与接口保护 |
-| [失效分析工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 故障复现、根因定位、器件失效与应力分析 |
-| [安规工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%AE%89%E8%A7%84%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电气安全设计、绝缘边界、风险评估与认证准备 |
-| [环境测试工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%8E%AF%E5%A2%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高低温、振动、跌落、老化等环境应力测试 |
-| [硬件可靠性工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 降额、寿命、温升、应力与 MTBF 相关设计方法 |
-| [认证工程师（CE/FCC/UL等）](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E8%AE%A4%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88CE_FCC_UL%E7%AD%89%EF%BC%89.md) | 法规认证资料、测试配合与整改闭环 |
+| [EMC硬件工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMC%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMC design, diagnosis, and closure from board level to system level |
+| [EMI整改工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMI%E6%95%B4%E6%94%B9%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMI problem localization, interference source analysis, and corrective actions |
+| [ESD防护工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/ESD%E9%98%B2%E6%8A%A4%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | ESD protection schemes, TVS selection, discharge paths, and interface protection |
+| [失效分析工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Failure reproduction, root cause analysis, component failure modes, and stress-related faults |
+| [安规工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%AE%89%E8%A7%84%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Electrical safety design, insulation boundaries, risk assessment, and certification preparation |
+| [环境测试工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%8E%AF%E5%A2%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Temperature, vibration, drop, aging, and environmental stress testing |
+| [硬件可靠性工程师](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Derating, lifetime, thermal stress, environmental robustness, and MTBF-related methods |
+| [认证工程师（CE/FCC/UL等）](./%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E8%AE%A4%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88CE_FCC_UL%E7%AD%89%EF%BC%89.md) | Regulatory certification documents, lab coordination, and corrective support |
 
-### 嵌入式硬件方向（7）
+### Embedded Hardware (7)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [MCU硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/MCU%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU 最小系统、复位时钟、下载接口与板级调试 |
-| [单片机硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 单片机控制类外围设计、总线、电平与保护 |
-| [嵌入式硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU/MPU 板级系统开发、接口、电源与联调 |
-| [嵌入式系统硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高复杂度嵌入式平台、DDR、Flash、总线与时序设计 |
-| [工控硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B7%A5%E6%8E%A7%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 工业现场抗干扰、隔离、浪涌、防雷与宽温设计 |
-| [控制板硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E6%8E%A7%E5%88%B6%E6%9D%BF%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 控制主板与功能板设计、驱动保护与联调 |
-| [自动化控制硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A7%E5%88%B6%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 自动化设备控制硬件、IO、继电器、工业总线与驱动采集 |
+| [MCU硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/MCU%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU minimum system, reset, clocks, download interface, and board debug |
+| [单片机硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Single-chip control hardware, buses, logic levels, pull-up/down handling, and protection |
+| [嵌入式硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Board-level embedded hardware with MCU/MPU peripherals, interfaces, power, and joint debug |
+| [嵌入式系统硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Complex embedded platforms, DDR, Flash, buses, timing, and system architecture |
+| [工控硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B7%A5%E6%8E%A7%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Industrial anti-interference, isolation, surge, lightning, and wide-temperature design |
+| [控制板硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E6%8E%A7%E5%88%B6%E6%9D%BF%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Controller main boards, functional boards, drive/protection design, and bring-up |
+| [自动化控制硬件工程师](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A7%E5%88%B6%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Automation control hardware, IO, relays, industrial buses, drives, and sensing |
 
-### 数字 / 模拟 / 混合信号方向（7）
+### Digital / Analog / Mixed-Signal (7)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [STM32硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | STM32 最小系统、Boot、SWD、ADC 参考与外围设计 |
-| [低功耗硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电池供电系统的功耗建模、休眠唤醒与续航闭环 |
-| [信号链硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 传感器到处理器的信号调理、滤波、隔离与误差链分析 |
-| [数字硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 数字逻辑、电路时序、总线协议与板级实现 |
-| [数模混合硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 模数混合系统、隔离分区、采样同步与串扰控制 |
-| [模拟硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 运放、滤波、采样调理、噪声与稳定性分析 |
-| [高速数字电路工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速接口、时序裕量、参考平面与板级调试 |
+| [STM32硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | STM32 minimum system, Boot, SWD, ADC reference, and peripheral board design |
+| [低功耗硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Battery-powered low-power planning, sleep/wake design, and power budgeting |
+| [信号链硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Sensor-to-processor signal conditioning, filtering, isolation, and error-chain analysis |
+| [数字硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Digital logic, timing constraints, interfaces, board implementation, and debug |
+| [数模混合硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Mixed-signal partitioning, grounding, sampling synchronization, and interference control |
+| [模拟硬件工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Op-amp circuits, filtering, signal conditioning, noise, and stability analysis |
+| [高速数字电路工程师](./%E6%95%B0%E5%AD%97%20:%20%E6%A8%A1%E6%8B%9F%20:%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | High-speed interfaces, timing margin, reference planes, and board-level debug |
 
-### 测试与验证方向（6）
+### Testing and Validation (6)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [EVT/DVT工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/EVT_DVT%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 样机阶段测试、风险识别与设计成熟度判断 |
-| [实验室测试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 仪器使用、测试执行、数据记录与重复性控制 |
-| [板级调试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E6%9D%BF%E7%BA%A7%E8%B0%83%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 上电、时钟、复位、接口与故障调试定位 |
-| [硬件测试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 功能、性能、边界与稳定性测试执行 |
-| [硬件验证工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E9%AA%8C%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 验证计划、缺陷闭环、EVT/DVT/PVT 准入判断 |
-| [自动化测试硬件工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 测试治具、接口控制、产测链路与自动化平台 |
+| [EVT/DVT工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/EVT_DVT%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Engineering sample validation, risk identification, and maturity judgment |
+| [实验室测试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Lab instruments, execution discipline, data capture, and repeatability |
+| [板级调试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E6%9D%BF%E7%BA%A7%E8%B0%83%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Power-up, clocks, reset, interfaces, and fault localization |
+| [硬件测试工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Functional, performance, boundary, and stability testing |
+| [硬件验证工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E9%AA%8C%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Validation planning, defect closure, and EVT/DVT/PVT gate decisions |
+| [自动化测试硬件工程师](./%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Test fixtures, interface control, production test links, and automation platforms |
 
-### 电源与功率电子方向（5）
+### Power and Power Electronics (5)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [BMS硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/BMS%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电芯采样、均衡、保护、高压安全与隔离通信 |
-| [储能硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%82%A8%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 储能系统模块、电源转换、保护与热管理 |
-| [功率电子工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 中高功率变换、驱动、磁件、热设计与损耗分析 |
-| [电机驱动硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 半桥/全桥、电流采样、保护与电机驱动控制板基础 |
-| [电源硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%BA%90%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | AC/DC、DC/DC、LDO、电源树、补偿、热与保护设计 |
+| [BMS硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/BMS%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Cell sensing, balancing, protection, high-voltage safety, and isolated communication |
+| [储能硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%82%A8%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Energy storage modules, power conversion, protection, and thermal management |
+| [功率电子工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Mid/high-power conversion, gate drive, magnetics, thermal design, and loss analysis |
+| [电机驱动硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Half-bridge/full-bridge topology, current sensing, protection, and motor-drive control boards |
+| [电源硬件工程师](./%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%BA%90%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | AC/DC, DC/DC, LDO, power trees, compensation, thermal design, and protection strategies |
 
-### 芯片平台与底层板级协同方向（4）
+### Platform and Low-Level Board Coordination (4)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [CPLD工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/CPLD%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 简单逻辑控制、接口转换、IO 电平与配置方式 |
-| [FPGA硬件工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/FPGA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | FPGA 供电、时钟、配置接口、多电压域与高速 IO |
-| [SoC硬件平台工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/SoC%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SoC/MPU 平台、DDR、电源时序、PMIC 与启动配置 |
-| [芯片应用工程师（FAE/AE偏硬件）](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/%E8%8A%AF%E7%89%87%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88FAE_AE%E5%81%8F%E7%A1%AC%E4%BB%B6%EF%BC%89.md) | 芯片应用支持、参考设计落地与客户问题分析 |
+| [CPLD工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/CPLD%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Basic programmable logic, interface conversion, IO levels, timing, and configuration |
+| [FPGA硬件工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/FPGA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | FPGA power rails, clocks, configuration, multi-voltage domains, and high-speed IO |
+| [SoC硬件平台工程师](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/SoC%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SoC/MPU platforms, DDR, power sequencing, PMIC coordination, and boot configuration |
+| [芯片应用工程师（FAE/AE偏硬件）](./%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/%E8%8A%AF%E7%89%87%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88FAE_AE%E5%81%8F%E7%A1%AC%E4%BB%B6%EF%BC%89.md) | Application support, reference design adaptation, and customer-facing hardware analysis |
 
-### 通信与接口方向（1）
+### Communication and Interfaces (1)
 
-| Skill | 定位 |
+| Skill | Focus |
 | --- | --- |
-| [通信硬件工程师](./%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 通信板卡、高速接口、链路调试、传输线与 EMC 协同设计 |
+| [通信硬件工程师](./%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design |
 
-## 如何选择合适的 Skill
+## 🎯 How To Choose A Skill
 
-如果你的任务属于以下类型，可以优先这样选：
+If your task is mainly about the following areas, start here:
 
-- 偏原理图与板级落地：`PCB硬件工程师`、`PCB Layout工程师`、`高速PCB工程师`
-- 偏系统控制板与嵌入式平台：`MCU硬件工程师`、`STM32硬件工程师`、`嵌入式系统硬件工程师`
-- 偏模拟采样与精密链路：`模拟硬件工程师`、`信号链硬件工程师`、`数模混合硬件工程师`
-- 偏电源、储能与驱动：`电源硬件工程师`、`功率电子工程师`、`电机驱动硬件工程师`、`BMS硬件工程师`
-- 偏可靠性、认证与整改：`EMC硬件工程师`、`安规工程师`、`硬件可靠性工程师`、`认证工程师（CE/FCC/UL等）`
-- 偏调试与验证闭环：`板级调试工程师`、`硬件测试工程师`、`硬件验证工程师`、`EVT/DVT工程师`
+- Schematic-to-board implementation: `PCB硬件工程师`, `PCB Layout工程师`, `高速PCB工程师`
+- Control boards and embedded platforms: `MCU硬件工程师`, `STM32硬件工程师`, `嵌入式系统硬件工程师`
+- Precision analog and signal-chain work: `模拟硬件工程师`, `信号链硬件工程师`, `数模混合硬件工程师`
+- Power, storage, and drives: `电源硬件工程师`, `功率电子工程师`, `电机驱动硬件工程师`, `BMS硬件工程师`
+- Compliance, reliability, and corrective work: `EMC硬件工程师`, `安规工程师`, `硬件可靠性工程师`, `认证工程师（CE/FCC/UL等）`
+- Debug and validation closure: `板级调试工程师`, `硬件测试工程师`, `硬件验证工程师`, `EVT/DVT工程师`
 
-## 这套仓库的特点
+## ✨ What Makes This Repository Different
 
-- 不是按“学科知识点”组织，而是按真实硬件岗位职责组织
-- 不是只给术语解释，而是直接强调工程规则、输入约束、验证闭环与交付物
-- 不是面向单一阶段，而是覆盖从方案、设计、评审、调试到量产导入的完整链条
-- 适合作为代理系统中的角色库，也适合作为团队内部硬件能力地图
+- It is organized by real hardware roles rather than by abstract knowledge topics
+- It emphasizes engineering rules, constraints, verification logic, and deliverables instead of glossary-style descriptions
+- It covers a full lifecycle from design and review to debug, validation, and production handoff
+- It can be used both as an agent role library and as an internal capability map for hardware teams
 
-## 许可证
+## ⚖️ License
 
-本仓库采用 [MIT License](./LICENSE) 发布。你可以复制、修改、分发和商用，但需要保留原始版权与许可声明。
+This repository is released under the [MIT License](./LICENSE). You may copy, modify, distribute, and use it commercially, as long as the original copyright and license notice are preserved.
 
-## 贡献方式
+## 🤝 Contributing
 
-如果你希望新增 skill、补充方向、修正文案或完善结构，请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+If you want to add skills, expand domains, refine role boundaries, or improve repository structure, read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
 
-建议优先保证以下一致性：
+Before submitting changes, keep these standards in mind:
 
-- skill 名称清晰且岗位边界明确
-- frontmatter 至少包含 `name` 与 `description`
-- 内容强调约束、流程、交付物和适用场景，而不是泛化定义
-- 不提交公司内部资料、客户敏感信息或受版权限制的内容
+- Skill names should be clear and role boundaries should be explicit
+- Frontmatter should include at least `name` and `description`
+- Content should emphasize constraints, workflows, deliverables, and application scope
+- Do not submit internal company materials, customer-sensitive content, or copyrighted assets you do not own
 
-## GitHub 自动检查
+## ✅ GitHub Checks
 
-仓库已配置 GitHub Actions，在 Pull Request 和手动触发时会检查：
+GitHub Actions is configured to validate this repository on pull requests and manual runs:
 
-- skill 文档 frontmatter 是否完整
-- `name` 是否重复
-- `README.md` 中的本地 skill 链接是否都指向真实文件
+- skill frontmatter completeness
+- duplicate `name` values
+- whether local skill links in `README.md` point to real files
 
-这些工作流只负责仓库质量校验，不会把 skill 自动安装到任何 agent 本地目录。
+These workflows are only for repository quality checks. They do not automatically install skills into any local agent directory.
+## 🚀 Possible Next Steps
 
+If you continue expanding this repository, these are strong next improvements:
 
+- add a consistent naming and tagging system across domains
+- add cross-skill composition suggestions such as `STM32 + EMC + Validation`
+- add English aliases or search-oriented indexes
+- clarify primary vs secondary roles where skill boundaries overlap
