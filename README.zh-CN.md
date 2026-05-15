@@ -13,7 +13,7 @@
 
 这是一个面向硬件研发场景的技能仓库，按工程职责拆分为可直接复用的专家型 skill 文档。每个 skill 都聚焦一个明确岗位，覆盖角色边界、关键约束、工作流程、沟通风格与交付要求，目标不是提供泛泛而谈的百科说明，而是让代理或协作者在进入具体任务时，立即切换到对应的工程判断框架。
 
-这个仓库借鉴了优秀 skill 仓库的入口组织方式，但内容完全围绕本仓库已有文件重写与整理，强调中文硬件研发语境、板级工程约束和量产导向。
+这个仓库借鉴了优秀 skill 仓库的入口组织方式，当前同时维护中英文两套 skill 文档，默认首页为英文版 README，并可随时切换到中文页，整体内容围绕本仓库实际文件组织，强调板级工程约束和量产导向。
 
 ## 📚 目录导航
 
@@ -65,7 +65,7 @@
 
 ## 📦 仓库概览
 
-- 47 个硬件相关 skill
+- 47 个硬件角色 skill，对应中英文两套文件
 - 8 个专业方向
 - 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
 - 适合用于方案评审、原理图检查、PCB 约束梳理、调试定位、验证策划、量产导入与跨团队协作
@@ -89,6 +89,15 @@
 
 ```text
 hardware-agency-agents/
+├── hardware-agency-agents-en/
+│   ├── PCB and Board-Level Implementation/
+│   ├── Reliability EMC and Safety/
+│   ├── Embedded Hardware/
+│   ├── Digital Analog and Mixed-Signal/
+│   ├── Testing and Validation/
+│   ├── Power and Power Electronics/
+│   ├── Chip Platforms and Low-Level Board Co-Design/
+│   └── Communication and Interfaces/
 └── hardware-agency-agents-cn/
     ├── PCB 与板级实现方向/
     ├── 可靠性 EMC 安规方向/
@@ -102,8 +111,10 @@ hardware-agency-agents/
 
 说明：
 
+- `README.md` 是默认英文首页
+- `README.zh-CN.md` 是对应的简体中文页面
+- `hardware-agency-agents-en` 保存英文版 skill 文档
 - `hardware-agency-agents-cn` 保存中文版 skill 文档
-- 这次提交先聚焦中文 skill 目录重组
 
 ## 🧰 Skill Index
 
@@ -233,7 +244,7 @@ hardware-agency-agents/
 
 - skill 文档 frontmatter 是否完整
 - `name` 是否重复
-- `README.md` 中的本地 skill 链接是否都指向真实文件
+- `README.md` 与 `README.zh-CN.md` 中的本地 skill 链接是否都指向真实文件
 
 这些工作流只负责仓库质量校验，不会把 skill 自动安装到任何 agent 本地目录。
 
