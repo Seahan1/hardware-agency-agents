@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-47-blue)
+![Skills](https://img.shields.io/badge/skills-63-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -55,6 +55,7 @@ Suggested starting points:
 - Power design: `Power Hardware Engineer`
 - EMC and corrective action: `EMC Hardware Engineer`
 - Validation closure: `Hardware Validation Engineer`
+- Hardware design review: choose the matching review skill from `hardware-design-review-validation/en/` before board release, EVT/DVT issue closure, or production introduction
 
 ## 📢 Public Notes
 
@@ -65,10 +66,10 @@ Suggested starting points:
 
 ## 📦 Overview
 
-- 47 hardware role skills with English and Chinese versions
+- 47 hardware role skills plus 16 hardware design review skills with English and Chinese versions
 - 8 engineering domains
 - Coverage across PCB implementation, embedded hardware, power, EMC/compliance, validation, SoC/FPGA platforms, and communication interfaces
-- Suitable for schematic review, PCB constraint analysis, debug work, validation planning, and production-readiness discussions
+- Suitable for schematic review, PCB constraint analysis, hardware design review, debug work, validation planning, and production-readiness discussions
 
 ## 🧭 How To Use
 
@@ -84,6 +85,7 @@ Typical examples:
 - Buck converter stability and thermal analysis: start with `Power Hardware Engineer`
 - High-speed board layout and impedance constraints: start with `High-Speed PCB Engineer` or `SI/PI Engineer`
 - EVT/DVT validation closure: start with `Hardware Validation Engineer` or `EVT/DVT Engineer`
+- Hardware design review before board release or production introduction: start with the matching skill in `hardware-design-review-validation/en/`
 
 ## 🗂️ Repository Structure
 
@@ -98,15 +100,18 @@ hardware-agency-agents/
 │   ├── Power and Power Electronics/
 │   ├── Chip Platforms and Low-Level Board Co-Design/
 │   └── Communication and Interfaces/
-└── hardware-agency-agents-cn/
-    ├── PCB 与板级实现方向/
-    ├── 可靠性 EMC 安规方向/
-    ├── 嵌入式硬件方向/
-    ├── 数字 : 模拟 : 混合信号方向/
-    ├── 测试与验证方向/
-    ├── 电源与功率电子方向/
-    ├── 芯片平台与底层板级协同方向/
-    └── 通信与接口方向/
+├── hardware-agency-agents-cn/
+│   ├── PCB 与板级实现方向/
+│   ├── 可靠性 EMC 安规方向/
+│   ├── 嵌入式硬件方向/
+│   ├── 数字 : 模拟 : 混合信号方向/
+│   ├── 测试与验证方向/
+│   ├── 电源与功率电子方向/
+│   ├── 芯片平台与底层板级协同方向/
+│   └── 通信与接口方向/
+└── hardware-design-review-validation/
+    ├── en/
+    └── cn/
 ```
 
 Notes:
@@ -115,6 +120,7 @@ Notes:
 - `README.zh-CN.md` is the matching Simplified Chinese page
 - `hardware-agency-agents-en` stores the English skill set
 - `hardware-agency-agents-cn` stores the Chinese skill set
+- `hardware-design-review-validation` stores hardware design review skills in English and Chinese
 
 ## 🧰 Skill Index
 
@@ -205,6 +211,35 @@ Notes:
 | --- | --- |
 | [Communications Hardware Engineer](./hardware-agency-agents-en/Communication%20and%20Interfaces/Communications%20Hardware%20Engineer.md) | Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design |
 
+
+### Hardware Design Review and Validation (16)
+
+#### English Review Skills (8)
+
+| Skill | Focus |
+| --- | --- |
+| [PCB and Board-Level Design Review Engineer](./hardware-design-review-validation/en/PCB%20and%20Board-Level%20Design%20Review%20Engineer.md) | Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points |
+| [Reliability EMC and Safety Design Review Engineer](./hardware-design-review-validation/en/Reliability%20EMC%20and%20Safety%20Design%20Review%20Engineer.md) | Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data |
+| [Embedded Hardware Design Review Engineer](./hardware-design-review-validation/en/Embedded%20Hardware%20Design%20Review%20Engineer.md) | Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access |
+| [Digital Analog and Mixed-Signal Design Review Engineer](./hardware-design-review-validation/en/Digital%20Analog%20and%20Mixed-Signal%20Design%20Review%20Engineer.md) | Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk |
+| [Testing and Validation Review Engineer](./hardware-design-review-validation/en/Testing%20and%20Validation%20Review%20Engineer.md) | Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure |
+| [Power and Power Electronics Design Review Engineer](./hardware-design-review-validation/en/Power%20and%20Power%20Electronics%20Design%20Review%20Engineer.md) | Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI |
+| [Chip Platform and Board Co-Design Review Engineer](./hardware-design-review-validation/en/Chip%20Platform%20and%20Board%20Co-Design%20Review%20Engineer.md) | Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
+| [Communications and Interface Design Review Engineer](./hardware-design-review-validation/en/Communications%20and%20Interface%20Design%20Review%20Engineer.md) | Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
+
+#### Chinese Review Skills (8)
+
+| Skill | Focus |
+| --- | --- |
+| [PCB与板级实现评审工程师](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
+| [可靠性EMC安规评审工程师](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
+| [嵌入式硬件评审工程师](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
+| [数字模拟混合信号评审工程师](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
+| [测试与验证评审工程师](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
+| [电源与功率电子评审工程师](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
+| [芯片平台与板级协同评审工程师](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
+| [通信与接口评审工程师](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
+
 ## 🎯 How To Choose A Skill
 
 If your task is mainly about the following areas, start here:
@@ -215,6 +250,7 @@ If your task is mainly about the following areas, start here:
 - Power, storage, and drives: `Power Hardware Engineer`, `Power Electronics Engineer`, `Motor Drive Hardware Engineer`, `BMS Hardware Engineer`
 - Compliance, reliability, and corrective work: `EMC Hardware Engineer`, `Safety Compliance Engineer`, `Hardware Reliability Engineer`, `Certification Engineer (CE FCC UL and More)`
 - Debug and validation closure: `Board-Level Debug Engineer`, `Hardware Test Engineer`, `Hardware Validation Engineer`, `EVT/DVT Engineer`
+- Board-release, design-review, EVT/DVT issue-closure, and production-introduction reviews: use the matching `Hardware Design Review and Validation` skill
 
 ## ✨ What Makes This Repository Different
 

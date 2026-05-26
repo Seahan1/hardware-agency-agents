@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-47-blue)
+![Skills](https://img.shields.io/badge/skills-63-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -55,6 +55,7 @@
 - 电源设计：`电源硬件工程师`
 - EMC 与整改：`EMC硬件工程师`
 - 验证闭环：`硬件验证工程师`
+- 硬件设计评审：投板前评审、EVT/DVT 问题闭环或量产导入前评审时，从 `hardware-design-review-validation/cn/` 选择对应评审 skill
 
 ## 📢 公开发布说明
 
@@ -65,10 +66,10 @@
 
 ## 📦 仓库概览
 
-- 47 个硬件角色 skill，对应中英文两套文件
+- 47 个硬件角色 skill，加 16 个硬件设计评审 skill，对应中英文两套文件
 - 8 个专业方向
 - 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
-- 适合用于方案评审、原理图检查、PCB 约束梳理、调试定位、验证策划、量产导入与跨团队协作
+- 适合用于方案评审、原理图检查、PCB 约束梳理、硬件设计评审、调试定位、验证策划、量产导入与跨团队协作
 
 ## 🧭 适合怎么用
 
@@ -84,6 +85,7 @@
 - 做 Buck 电源稳定性与热设计分析：优先使用 `电源硬件工程师`
 - 做高速板卡布局与阻抗约束梳理：优先使用 `高速PCB工程师` 或 `SI/PI工程师`
 - 做 EVT/DVT 阶段验证收敛：优先使用 `硬件验证工程师` 或 `EVT/DVT工程师`
+- 做投板前评审或量产导入前评审：优先使用 `hardware-design-review-validation/cn/` 下对应方向的评审 skill
 
 ## 🗂️ 目录结构
 
@@ -98,15 +100,18 @@ hardware-agency-agents/
 │   ├── Power and Power Electronics/
 │   ├── Chip Platforms and Low-Level Board Co-Design/
 │   └── Communication and Interfaces/
-└── hardware-agency-agents-cn/
-    ├── PCB 与板级实现方向/
-    ├── 可靠性 EMC 安规方向/
-    ├── 嵌入式硬件方向/
-    ├── 数字 : 模拟 : 混合信号方向/
-    ├── 测试与验证方向/
-    ├── 电源与功率电子方向/
-    ├── 芯片平台与底层板级协同方向/
-    └── 通信与接口方向/
+├── hardware-agency-agents-cn/
+│   ├── PCB 与板级实现方向/
+│   ├── 可靠性 EMC 安规方向/
+│   ├── 嵌入式硬件方向/
+│   ├── 数字 : 模拟 : 混合信号方向/
+│   ├── 测试与验证方向/
+│   ├── 电源与功率电子方向/
+│   ├── 芯片平台与底层板级协同方向/
+│   └── 通信与接口方向/
+└── hardware-design-review-validation/
+    ├── en/
+    └── cn/
 ```
 
 说明：
@@ -115,6 +120,7 @@ hardware-agency-agents/
 - `README.zh-CN.md` 是对应的简体中文页面
 - `hardware-agency-agents-en` 保存英文版 skill 文档
 - `hardware-agency-agents-cn` 保存中文版 skill 文档
+- `hardware-design-review-validation` 集中保存中英文硬件设计评审 skill
 
 ## 🧰 Skill Index
 
@@ -205,6 +211,35 @@ hardware-agency-agents/
 | --- | --- |
 | [通信硬件工程师](./hardware-agency-agents-cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 通信板卡、高速接口、链路调试、传输线与 EMC 协同设计 |
 
+
+### 硬件设计评审与验证（16）
+
+#### 中文评审 Skill（8）
+
+| Skill | 定位 |
+| --- | --- |
+| [PCB与板级实现评审工程师](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
+| [可靠性EMC安规评审工程师](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
+| [嵌入式硬件评审工程师](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
+| [数字模拟混合信号评审工程师](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
+| [测试与验证评审工程师](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
+| [电源与功率电子评审工程师](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
+| [芯片平台与板级协同评审工程师](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
+| [通信与接口评审工程师](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
+
+#### 英文 Review Skill（8）
+
+| Skill | 定位 |
+| --- | --- |
+| [PCB and Board-Level Design Review Engineer](./hardware-design-review-validation/en/PCB%20and%20Board-Level%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points |
+| [Reliability EMC and Safety Design Review Engineer](./hardware-design-review-validation/en/Reliability%20EMC%20and%20Safety%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data |
+| [Embedded Hardware Design Review Engineer](./hardware-design-review-validation/en/Embedded%20Hardware%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access |
+| [Digital Analog and Mixed-Signal Design Review Engineer](./hardware-design-review-validation/en/Digital%20Analog%20and%20Mixed-Signal%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk |
+| [Testing and Validation Review Engineer](./hardware-design-review-validation/en/Testing%20and%20Validation%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure |
+| [Power and Power Electronics Design Review Engineer](./hardware-design-review-validation/en/Power%20and%20Power%20Electronics%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI |
+| [Chip Platform and Board Co-Design Review Engineer](./hardware-design-review-validation/en/Chip%20Platform%20and%20Board%20Co-Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
+| [Communications and Interface Design Review Engineer](./hardware-design-review-validation/en/Communications%20and%20Interface%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
+
 ## 🎯 如何选择合适的 Skill
 
 如果你的任务属于以下类型，可以优先这样选：
@@ -215,6 +250,7 @@ hardware-agency-agents/
 - 偏电源、储能与驱动：`电源硬件工程师`、`功率电子工程师`、`电机驱动硬件工程师`、`BMS硬件工程师`
 - 偏可靠性、认证与整改：`EMC硬件工程师`、`安规工程师`、`硬件可靠性工程师`、`认证工程师（CE/FCC/UL等）`
 - 偏调试与验证闭环：`板级调试工程师`、`硬件测试工程师`、`硬件验证工程师`、`EVT/DVT工程师`
+- 偏投板前评审、设计评审、EVT/DVT 问题闭环和量产导入前评审：使用 `硬件设计评审与验证` 中对应方向的评审 skill
 
 ## ✨ 这套仓库的特点
 
