@@ -43,10 +43,24 @@ This repository exists to narrow that gap:
 
 ## ⚡ Quick Start
 
-1. Pick the closest skill for your task from the index below.
-2. Read that skill as the primary engineering role.
-3. Add one or two adjacent skills when the task crosses domains.
-4. Use the skill content to frame review comments, design constraints, debug hypotheses, and validation plans.
+1. Install the skills for your agent:
+
+   Codex:
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
+   ```
+
+   Claude Code:
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
+   ```
+
+2. Pick the closest skill for your task from the index below.
+3. Read that skill as the primary engineering role.
+4. Add one or two adjacent skills when the task crosses domains.
+5. Use the skill content to frame review comments, design constraints, debug hypotheses, and validation plans.
 
 Suggested starting points:
 

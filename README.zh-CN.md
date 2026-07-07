@@ -43,10 +43,24 @@
 
 ## ⚡ 快速开始
 
-1. 先从下面索引里找到最接近你任务的 skill。
-2. 把这个 skill 当作主工程角色来使用。
-3. 如果问题跨领域，再补充 1 到 2 个相邻 skill 联合判断。
-4. 用 skill 内容来组织评审意见、设计约束、调试假设和验证计划。
+1. 为你的 Agent 安装 skills：
+
+   Codex：
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
+   ```
+
+   Claude Code：
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
+   ```
+
+2. 先从下面索引里找到最接近你任务的 skill。
+3. 把这个 skill 当作主工程角色来使用。
+4. 如果问题跨领域，再补充 1 到 2 个相邻 skill 联合判断。
+5. 用 skill 内容来组织评审意见、设计约束、调试假设和验证计划。
 
 推荐起点：
 
