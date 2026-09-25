@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-63-blue)
+![Skills](https://img.shields.io/badge/skills-55-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -33,16 +33,24 @@ This repository is inspired by the organizational clarity of strong skill librar
 
 1. Install the skills for your agent:
 
-   Codex:
+   **Linux / macOS (Bash / Zsh):**
 
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
+   ```bash
+   # Codex
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | bash -s -- codex
+
+   # Claude Code
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | bash -s -- claude-code
    ```
 
-   Claude Code:
+   **Windows (PowerShell):**
 
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
+   ```powershell
+   # Codex
+   irm https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.ps1 | iex
+
+   # Claude Code
+   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.ps1))) claude-code
    ```
 
 2. Pick the closest skill for your task from the index below.
@@ -57,7 +65,7 @@ Suggested starting points:
 - Power design: `Power Hardware Engineer`
 - EMC and corrective action: `EMC Hardware Engineer`
 - Validation closure: `Hardware Validation Engineer`
-- Hardware design review: choose the matching review skill from `hardware-design-review-validation/en/` before board release, EVT/DVT issue closure, or production introduction
+- Hardware design review: choose the matching review skill from `skills/ or skills.zh-CN/` before board release, EVT/DVT issue closure, or production introduction
 
 ## 📢 Public Notes
 
@@ -68,7 +76,7 @@ Suggested starting points:
 
 ## 📦 Overview
 
-- 47 hardware role skills plus 16 hardware design review skills with English and Chinese versions
+- 47 hardware role skills plus 8 hardware design review skills in English and Chinese (55 unique skills, 110 files total)
 - 8 engineering domains
 - Coverage across PCB implementation, embedded hardware, power, EMC/compliance, validation, SoC/FPGA platforms, and communication interfaces
 - Suitable for schematic review, PCB constraint analysis, hardware design review, debug work, validation planning, and production-readiness discussions
@@ -87,42 +95,32 @@ Typical examples:
 - Buck converter stability and thermal analysis: start with `Power Hardware Engineer`
 - High-speed board layout and impedance constraints: start with `High-Speed PCB Engineer` or `SI/PI Engineer`
 - EVT/DVT validation closure: start with `Hardware Validation Engineer` or `EVT/DVT Engineer`
-- Hardware design review before board release or production introduction: start with the matching skill in `hardware-design-review-validation/en/`
+- Hardware design review before board release or production introduction: start with the matching skill in `skills/ or skills.zh-CN/`
 
 ## 🗂️ Repository Structure
 
 ```text
 hardware-agency-agents/
-├── hardware-agency-agents-en/
-│   ├── PCB and Board-Level Implementation/
-│   ├── Reliability EMC and Safety/
-│   ├── Embedded Hardware/
-│   ├── Digital Analog and Mixed-Signal/
-│   ├── Testing and Validation/
-│   ├── Power and Power Electronics/
-│   ├── Chip Platforms and Low-Level Board Co-Design/
-│   └── Communication and Interfaces/
-├── hardware-agency-agents-cn/
-│   ├── PCB 与板级实现方向/
-│   ├── 可靠性 EMC 安规方向/
-│   ├── 嵌入式硬件方向/
-│   ├── 数字 : 模拟 : 混合信号方向/
-│   ├── 测试与验证方向/
-│   ├── 电源与功率电子方向/
-│   ├── 芯片平台与底层板级协同方向/
-│   └── 通信与接口方向/
-└── hardware-design-review-validation/
-    ├── en/
-    └── cn/
+├── skills/                     # English skills in standard format (55 skills)
+│   ├── pcb-hardware-engineer/
+│   │   └── SKILL.md
+│   ├── emc-hardware-engineer/
+│   │   └── SKILL.md
+│   └── ...
+└── skills.zh-CN/               # Chinese skills in standard format (55 skills)
+    ├── PCB硬件工程师/
+    │   └── SKILL.md
+    ├── EMC硬件工程师/
+    │   └── SKILL.md
+    └── ...
 ```
 
 Notes:
 
 - `README.md` is the default English landing page
 - `README.zh-CN.md` is the matching Simplified Chinese page
-- `hardware-agency-agents-en` stores the English skill set
-- `hardware-agency-agents-cn` stores the Chinese skill set
-- `hardware-design-review-validation` stores hardware design review skills in English and Chinese
+- `skills` stores all English skills in standard Codex / Claude Code / Antigravity CLI format (`skills/<name>/SKILL.md`)
+- `skills.zh-CN` stores all Chinese skills in standard format (`skills.zh-CN/<name>/SKILL.md`)
 
 ## 🧰 Skill Index
 
@@ -130,88 +128,88 @@ Notes:
 
 | Skill | Focus |
 | --- | --- |
-| [DFA Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/DFA%20Engineer.md) | Design for assembly, soldering risk, component spacing, orientation, and reworkability |
-| [DFM Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/DFM%20Engineer.md) | Design for manufacturability, process limits, panelization, via process, and fabrication data review |
-| [PCB Layout Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/PCB%20Layout%20Engineer.md) | Layout and routing quality, stackup planning, constraints, impedance, vias, and return paths |
-| [PCB Footprint Library Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/PCB%20Footprint%20Library%20Engineer.md) | Footprint library quality, pad rules, 3D models, and naming standards |
-| [PCB Hardware Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/PCB%20Hardware%20Engineer.md) | End-to-end board implementation from schematic to manufacturable PCB with SI, PI, EMC, DFM, and outputs |
-| [SI/PI Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/SI-PI%20Engineer.md) | Signal integrity and power integrity modeling, simulation, diagnosis, and correction |
-| [RF Hardware Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/RF%20Hardware%20Engineer.md) | RF front-end implementation, impedance matching, antenna coordination, and RF debug |
-| [Hardware Process Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/Hardware%20Process%20Engineer.md) | SMT/DIP process, manufacturing introduction, and process coordination |
-| [High-Speed PCB Engineer](./hardware-agency-agents-en/PCB%20and%20Board-Level%20Implementation/High-Speed%20PCB%20Engineer.md) | High-speed board constraints, differential routing, length matching, impedance, and crosstalk control |
+| [DFA Engineer](./skills/PCB%20and%20Board-Level%20Implementation/dfa-engineer/SKILL.md) | Design for assembly, soldering risk, component spacing, orientation, and reworkability |
+| [DFM Engineer](./skills/PCB%20and%20Board-Level%20Implementation/dfm-engineer/SKILL.md) | Design for manufacturability, process limits, panelization, via process, and fabrication data review |
+| [PCB Layout Engineer](./skills/PCB%20and%20Board-Level%20Implementation/pcb-layout-engineer/SKILL.md) | Layout and routing quality, stackup planning, constraints, impedance, vias, and return paths |
+| [PCB Footprint Library Engineer](./skills/PCB%20and%20Board-Level%20Implementation/pcb-footprint-library-engineer/SKILL.md) | Footprint library quality, pad rules, 3D models, and naming standards |
+| [PCB Hardware Engineer](./skills/PCB%20and%20Board-Level%20Implementation/pcb-hardware-engineer/SKILL.md) | End-to-end board implementation from schematic to manufacturable PCB with SI, PI, EMC, DFM, and outputs |
+| [SI/PI Engineer](./skills/PCB%20and%20Board-Level%20Implementation/si-pi-engineer/SKILL.md) | Signal integrity and power integrity modeling, simulation, diagnosis, and correction |
+| [RF Hardware Engineer](./skills/PCB%20and%20Board-Level%20Implementation/rf-hardware-engineer/SKILL.md) | RF front-end implementation, impedance matching, antenna coordination, and RF debug |
+| [Hardware Process Engineer](./skills/PCB%20and%20Board-Level%20Implementation/hardware-process-engineer/SKILL.md) | SMT/DIP process, manufacturing introduction, and process coordination |
+| [High-Speed PCB Engineer](./skills/PCB%20and%20Board-Level%20Implementation/high-speed-pcb-engineer/SKILL.md) | High-speed board constraints, differential routing, length matching, impedance, and crosstalk control |
 
 ### Reliability, EMC, and Compliance (8)
 
 | Skill | Focus |
 | --- | --- |
-| [EMC Hardware Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/EMC%20Hardware%20Engineer.md) | EMC design, diagnosis, and closure from board level to system level |
-| [EMI Remediation Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/EMI%20Remediation%20Engineer.md) | EMI problem localization, interference source analysis, and corrective actions |
-| [ESD Protection Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/ESD%20Protection%20Engineer.md) | ESD protection schemes, TVS selection, discharge paths, and interface protection |
-| [Failure Analysis Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Failure%20Analysis%20Engineer.md) | Failure reproduction, root cause analysis, component failure modes, and stress-related faults |
-| [Safety Compliance Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Safety%20Compliance%20Engineer.md) | Electrical safety design, insulation boundaries, risk assessment, and certification preparation |
-| [Environmental Test Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Environmental%20Test%20Engineer.md) | Temperature, vibration, drop, aging, and environmental stress testing |
-| [Hardware Reliability Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Hardware%20Reliability%20Engineer.md) | Derating, lifetime, thermal stress, environmental robustness, and MTBF-related methods |
-| [Certification Engineer (CE FCC UL and More)](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Certification%20Engineer%20-%20CE%20FCC%20UL%20and%20More.md) | Regulatory certification documents, lab coordination, and corrective support |
+| [EMC Hardware Engineer](./skills/Reliability%20EMC%20and%20Safety/emc-hardware-engineer/SKILL.md) | EMC design, diagnosis, and closure from board level to system level |
+| [EMI Remediation Engineer](./skills/Reliability%20EMC%20and%20Safety/emi-remediation-engineer/SKILL.md) | EMI problem localization, interference source analysis, and corrective actions |
+| [ESD Protection Engineer](./skills/Reliability%20EMC%20and%20Safety/esd-protection-engineer/SKILL.md) | ESD protection schemes, TVS selection, discharge paths, and interface protection |
+| [Failure Analysis Engineer](./skills/Reliability%20EMC%20and%20Safety/failure-analysis-engineer/SKILL.md) | Failure reproduction, root cause analysis, component failure modes, and stress-related faults |
+| [Safety Compliance Engineer](./skills/Reliability%20EMC%20and%20Safety/safety-compliance-engineer/SKILL.md) | Electrical safety design, insulation boundaries, risk assessment, and certification preparation |
+| [Environmental Test Engineer](./skills/Reliability%20EMC%20and%20Safety/environmental-test-engineer/SKILL.md) | Temperature, vibration, drop, aging, and environmental stress testing |
+| [Hardware Reliability Engineer](./skills/Reliability%20EMC%20and%20Safety/hardware-reliability-engineer/SKILL.md) | Derating, lifetime, thermal stress, environmental robustness, and MTBF-related methods |
+| [Certification Engineer (CE FCC UL and More)](./skills/Reliability%20EMC%20and%20Safety/certification-engineer/SKILL.md) | Regulatory certification documents, lab coordination, and corrective support |
 
 ### Embedded Hardware (7)
 
 | Skill | Focus |
 | --- | --- |
-| [MCU Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/MCU%20Hardware%20Engineer.md) | MCU minimum system, reset, clocks, download interface, and board debug |
-| [Microcontroller Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Microcontroller%20Hardware%20Engineer.md) | Single-chip control hardware, buses, logic levels, pull-up/down handling, and protection |
-| [Embedded Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Embedded%20Hardware%20Engineer.md) | Board-level embedded hardware with MCU/MPU peripherals, interfaces, power, and joint debug |
-| [Embedded Systems Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Embedded%20Systems%20Hardware%20Engineer.md) | Complex embedded platforms, DDR, Flash, buses, timing, and system architecture |
-| [Industrial Control Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Industrial%20Control%20Hardware%20Engineer.md) | Industrial anti-interference, isolation, surge, lightning, and wide-temperature design |
-| [Control Board Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Control%20Board%20Hardware%20Engineer.md) | Controller main boards, functional boards, drive/protection design, and bring-up |
-| [Automation Control Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Automation%20Control%20Hardware%20Engineer.md) | Automation control hardware, IO, relays, industrial buses, drives, and sensing |
+| [MCU Hardware Engineer](./skills/Embedded%20Hardware/mcu-hardware-engineer/SKILL.md) | MCU minimum system, reset, clocks, download interface, and board debug |
+| [Microcontroller Hardware Engineer](./skills/Embedded%20Hardware/microcontroller-hardware-engineer/SKILL.md) | Single-chip control hardware, buses, logic levels, pull-up/down handling, and protection |
+| [Embedded Hardware Engineer](./skills/Embedded%20Hardware/embedded-hardware-engineer/SKILL.md) | Board-level embedded hardware with MCU/MPU peripherals, interfaces, power, and joint debug |
+| [Embedded Systems Hardware Engineer](./skills/Embedded%20Hardware/embedded-systems-hardware-engineer/SKILL.md) | Complex embedded platforms, DDR, Flash, buses, timing, and system architecture |
+| [Industrial Control Hardware Engineer](./skills/Embedded%20Hardware/industrial-control-hardware-engineer/SKILL.md) | Industrial anti-interference, isolation, surge, lightning, and wide-temperature design |
+| [Control Board Hardware Engineer](./skills/Embedded%20Hardware/control-board-hardware-engineer/SKILL.md) | Controller main boards, functional boards, drive/protection design, and bring-up |
+| [Automation Control Hardware Engineer](./skills/Embedded%20Hardware/automation-control-hardware-engineer/SKILL.md) | Automation control hardware, IO, relays, industrial buses, drives, and sensing |
 
 ### Digital / Analog / Mixed-Signal (7)
 
 | Skill | Focus |
 | --- | --- |
-| [STM32 Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/STM32%20Hardware%20Engineer.md) | STM32 minimum system, Boot, SWD, ADC reference, and peripheral board design |
-| [Low-Power Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/Low-Power%20Hardware%20Engineer.md) | Battery-powered low-power planning, sleep/wake design, and power budgeting |
-| [Signal Chain Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/Signal%20Chain%20Hardware%20Engineer.md) | Sensor-to-processor signal conditioning, filtering, isolation, and error-chain analysis |
-| [Digital Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/Digital%20Hardware%20Engineer.md) | Digital logic, timing constraints, interfaces, board implementation, and debug |
-| [Mixed-Signal Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/Mixed-Signal%20Hardware%20Engineer.md) | Mixed-signal partitioning, grounding, sampling synchronization, and interference control |
-| [Analog Hardware Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/Analog%20Hardware%20Engineer.md) | Op-amp circuits, filtering, signal conditioning, noise, and stability analysis |
-| [High-Speed Digital Circuit Engineer](./hardware-agency-agents-en/Digital%20Analog%20and%20Mixed-Signal/High-Speed%20Digital%20Circuit%20Engineer.md) | High-speed interfaces, timing margin, reference planes, and board-level debug |
+| [STM32 Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/stm32-hardware-engineer/SKILL.md) | STM32 minimum system, Boot, SWD, ADC reference, and peripheral board design |
+| [Low-Power Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/low-power-hardware-engineer/SKILL.md) | Battery-powered low-power planning, sleep/wake design, and power budgeting |
+| [Signal Chain Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/signal-chain-hardware-engineer/SKILL.md) | Sensor-to-processor signal conditioning, filtering, isolation, and error-chain analysis |
+| [Digital Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/digital-hardware-engineer/SKILL.md) | Digital logic, timing constraints, interfaces, board implementation, and debug |
+| [Mixed-Signal Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/mixed-signal-hardware-engineer/SKILL.md) | Mixed-signal partitioning, grounding, sampling synchronization, and interference control |
+| [Analog Hardware Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/analog-hardware-engineer/SKILL.md) | Op-amp circuits, filtering, signal conditioning, noise, and stability analysis |
+| [High-Speed Digital Circuit Engineer](./skills/Digital%20Analog%20and%20Mixed-Signal/high-speed-digital-circuit-engineer/SKILL.md) | High-speed interfaces, timing margin, reference planes, and board-level debug |
 
 ### Testing and Validation (6)
 
 | Skill | Focus |
 | --- | --- |
-| [EVT/DVT Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/EVT-DVT%20Engineer.md) | Engineering sample validation, risk identification, and maturity judgment |
-| [Lab Test Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/Lab%20Test%20Engineer.md) | Lab instruments, execution discipline, data capture, and repeatability |
-| [Board-Level Debug Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/Board-Level%20Debug%20Engineer.md) | Power-up, clocks, reset, interfaces, and fault localization |
-| [Hardware Test Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/Hardware%20Test%20Engineer.md) | Functional, performance, boundary, and stability testing |
-| [Hardware Validation Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/Hardware%20Validation%20Engineer.md) | Validation planning, defect closure, and EVT/DVT/PVT gate decisions |
-| [Automated Test Hardware Engineer](./hardware-agency-agents-en/Testing%20and%20Validation/Automated%20Test%20Hardware%20Engineer.md) | Test fixtures, interface control, production test links, and automation platforms |
+| [EVT/DVT Engineer](./skills/Testing%20and%20Validation/evt-dvt-engineer/SKILL.md) | Engineering sample validation, risk identification, and maturity judgment |
+| [Lab Test Engineer](./skills/Testing%20and%20Validation/lab-test-engineer/SKILL.md) | Lab instruments, execution discipline, data capture, and repeatability |
+| [Board-Level Debug Engineer](./skills/Testing%20and%20Validation/board-level-debug-engineer/SKILL.md) | Power-up, clocks, reset, interfaces, and fault localization |
+| [Hardware Test Engineer](./skills/Testing%20and%20Validation/hardware-test-engineer/SKILL.md) | Functional, performance, boundary, and stability testing |
+| [Hardware Validation Engineer](./skills/Testing%20and%20Validation/hardware-validation-engineer/SKILL.md) | Validation planning, defect closure, and EVT/DVT/PVT gate decisions |
+| [Automated Test Hardware Engineer](./skills/Testing%20and%20Validation/automated-test-hardware-engineer/SKILL.md) | Test fixtures, interface control, production test links, and automation platforms |
 
 ### Power and Power Electronics (5)
 
 | Skill | Focus |
 | --- | --- |
-| [BMS Hardware Engineer](./hardware-agency-agents-en/Power%20and%20Power%20Electronics/BMS%20Hardware%20Engineer.md) | Cell sensing, balancing, protection, high-voltage safety, and isolated communication |
-| [Energy Storage Hardware Engineer](./hardware-agency-agents-en/Power%20and%20Power%20Electronics/Energy%20Storage%20Hardware%20Engineer.md) | Energy storage modules, power conversion, protection, and thermal management |
-| [Power Electronics Engineer](./hardware-agency-agents-en/Power%20and%20Power%20Electronics/Power%20Electronics%20Engineer.md) | Mid/high-power conversion, gate drive, magnetics, thermal design, and loss analysis |
-| [Motor Drive Hardware Engineer](./hardware-agency-agents-en/Power%20and%20Power%20Electronics/Motor%20Drive%20Hardware%20Engineer.md) | Half-bridge/full-bridge topology, current sensing, protection, and motor-drive control boards |
-| [Power Hardware Engineer](./hardware-agency-agents-en/Power%20and%20Power%20Electronics/Power%20Hardware%20Engineer.md) | AC/DC, DC/DC, LDO, power trees, compensation, thermal design, and protection strategies |
+| [BMS Hardware Engineer](./skills/Power%20and%20Power%20Electronics/bms-hardware-engineer/SKILL.md) | Cell sensing, balancing, protection, high-voltage safety, and isolated communication |
+| [Energy Storage Hardware Engineer](./skills/Power%20and%20Power%20Electronics/energy-storage-hardware-engineer/SKILL.md) | Energy storage modules, power conversion, protection, and thermal management |
+| [Power Electronics Engineer](./skills/Power%20and%20Power%20Electronics/power-electronics-engineer/SKILL.md) | Mid/high-power conversion, gate drive, magnetics, thermal design, and loss analysis |
+| [Motor Drive Hardware Engineer](./skills/Power%20and%20Power%20Electronics/motor-drive-hardware-engineer/SKILL.md) | Half-bridge/full-bridge topology, current sensing, protection, and motor-drive control boards |
+| [Power Hardware Engineer](./skills/Power%20and%20Power%20Electronics/power-hardware-engineer/SKILL.md) | AC/DC, DC/DC, LDO, power trees, compensation, thermal design, and protection strategies |
 
 ### Platform and Low-Level Board Coordination (4)
 
 | Skill | Focus |
 | --- | --- |
-| [CPLD Engineer](./hardware-agency-agents-en/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/CPLD%20Engineer.md) | Basic programmable logic, interface conversion, IO levels, timing, and configuration |
-| [FPGA Hardware Engineer](./hardware-agency-agents-en/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/FPGA%20Hardware%20Engineer.md) | FPGA power rails, clocks, configuration, multi-voltage domains, and high-speed IO |
-| [SoC Hardware Platform Engineer](./hardware-agency-agents-en/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/SoC%20Hardware%20Platform%20Engineer.md) | SoC/MPU platforms, DDR, power sequencing, PMIC coordination, and boot configuration |
-| [Chip Applications Engineer (Hardware-Focused FAE AE)](./hardware-agency-agents-en/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/Chip%20Applications%20Engineer%20-%20Hardware%20Focused%20FAE%20AE.md) | Application support, reference design adaptation, and customer-facing hardware analysis |
+| [CPLD Engineer](./skills/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/cpld-engineer/SKILL.md) | Basic programmable logic, interface conversion, IO levels, timing, and configuration |
+| [FPGA Hardware Engineer](./skills/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/fpga-hardware-engineer/SKILL.md) | FPGA power rails, clocks, configuration, multi-voltage domains, and high-speed IO |
+| [SoC Hardware Platform Engineer](./skills/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/soc-hardware-platform-engineer/SKILL.md) | SoC/MPU platforms, DDR, power sequencing, PMIC coordination, and boot configuration |
+| [Chip Applications Engineer (Hardware-Focused FAE AE)](./skills/Chip%20Platforms%20and%20Low-Level%20Board%20Co-Design/chip-applications-engineer/SKILL.md) | Application support, reference design adaptation, and customer-facing hardware analysis |
 
 ### Communication and Interfaces (1)
 
 | Skill | Focus |
 | --- | --- |
-| [Communications Hardware Engineer](./hardware-agency-agents-en/Communication%20and%20Interfaces/Communications%20Hardware%20Engineer.md) | Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design |
+| [Communications Hardware Engineer](./skills/Communication%20and%20Interfaces/communications-hardware-engineer/SKILL.md) | Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design |
 
 
 ### Hardware Design Review and Validation (16)
@@ -220,27 +218,27 @@ Notes:
 
 | Skill | Focus |
 | --- | --- |
-| [PCB and Board-Level Design Review Engineer](./hardware-design-review-validation/en/PCB%20and%20Board-Level%20Design%20Review%20Engineer.md) | Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points |
-| [Reliability EMC and Safety Design Review Engineer](./hardware-design-review-validation/en/Reliability%20EMC%20and%20Safety%20Design%20Review%20Engineer.md) | Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data |
-| [Embedded Hardware Design Review Engineer](./hardware-design-review-validation/en/Embedded%20Hardware%20Design%20Review%20Engineer.md) | Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access |
-| [Digital Analog and Mixed-Signal Design Review Engineer](./hardware-design-review-validation/en/Digital%20Analog%20and%20Mixed-Signal%20Design%20Review%20Engineer.md) | Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk |
-| [Testing and Validation Review Engineer](./hardware-design-review-validation/en/Testing%20and%20Validation%20Review%20Engineer.md) | Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure |
-| [Power and Power Electronics Design Review Engineer](./hardware-design-review-validation/en/Power%20and%20Power%20Electronics%20Design%20Review%20Engineer.md) | Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI |
-| [Chip Platform and Board Co-Design Review Engineer](./hardware-design-review-validation/en/Chip%20Platform%20and%20Board%20Co-Design%20Review%20Engineer.md) | Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
-| [Communications and Interface Design Review Engineer](./hardware-design-review-validation/en/Communications%20and%20Interface%20Design%20Review%20Engineer.md) | Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
+| [PCB and Board-Level Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/pcb-and-board-level-design-review-engineer/SKILL.md) | Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points |
+| [Reliability EMC and Safety Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/reliability-emc-and-safety-design-review-engineer/SKILL.md) | Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data |
+| [Embedded Hardware Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/embedded-hardware-design-review-engineer/SKILL.md) | Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access |
+| [Digital Analog and Mixed-Signal Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/digital-analog-and-mixed-signal-design-review-engineer/SKILL.md) | Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk |
+| [Testing and Validation Review Engineer](./skills/Hardware%20Design%20Review%20Validation/testing-and-validation-review-engineer/SKILL.md) | Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure |
+| [Power and Power Electronics Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/power-and-power-electronics-design-review-engineer/SKILL.md) | Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI |
+| [Chip Platform and Board Co-Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/chip-platform-and-board-co-design-review-engineer/SKILL.md) | Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
+| [Communications and Interface Design Review Engineer](./skills/Hardware%20Design%20Review%20Validation/communications-and-interface-design-review-engineer/SKILL.md) | Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
 
 #### Chinese Review Skills (8)
 
 | Skill | Focus |
 | --- | --- |
-| [PCB与板级实现评审工程师](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
-| [可靠性EMC安规评审工程师](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
-| [嵌入式硬件评审工程师](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
-| [数字模拟混合信号评审工程师](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
-| [测试与验证评审工程师](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
-| [电源与功率电子评审工程师](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
-| [芯片平台与板级协同评审工程师](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
-| [通信与接口评审工程师](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
+| [PCB与板级实现评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
+| [可靠性EMC安规评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
+| [嵌入式硬件评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
+| [数字模拟混合信号评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
+| [测试与验证评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
+| [电源与功率电子评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
+| [芯片平台与板级协同评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
+| [通信与接口评审工程师](./skills.zh-CN/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E4%B8%8E%E9%AA%8C%E8%AF%81/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88/SKILL.md) | Chinese-language hardware design review skill: 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
 
 ## 🎯 How To Choose A Skill
 

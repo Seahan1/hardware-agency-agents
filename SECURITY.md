@@ -1,29 +1,31 @@
 # Security Policy
 
+[English](./SECURITY.md) | [简体中文](./SECURITY.zh-CN.md)
+
 ## Reporting a Vulnerability
 
-这个仓库主要承载 Markdown skill 文档，不是典型的软件运行时项目，但仍可能出现以下风险：
+This repository primarily hosts Markdown skill documents rather than traditional executable software runtime projects. However, the following risks may still arise:
 
-- 意外提交了不应公开的内部资料、客户信息或受限文档
-- 提交了带有恶意链接、恶意脚本或误导性安装说明的内容
-- 文档中包含可能导致高风险误用的工程建议且缺少边界声明
+- Accidental commit of proprietary internal documents, customer confidential information, or restricted assets.
+- Submissions containing malicious URLs, harmful scripts, or misleading installation instructions.
+- Guidance or engineering advice that could lead to high-risk hardware damage or safety hazards without appropriate boundary warnings.
 
-如果你发现上述问题，请不要先公开开 issue 讨论细节。
+If you discover any of the above issues, **please do not open a public issue** to discuss sensitive details.
 
-建议处理方式：
+### Recommended Reporting Procedure:
 
-1. 通过 GitHub 私信、仓库维护者主页联系方式，或私有渠道联系维护者
-2. 提供受影响文件路径、问题描述和必要的复现信息
-3. 如果涉及敏感信息，请不要在公开页面粘贴原始内容
+1. Contact the repository maintainers privately via GitHub private message, profile contact information, or direct private channels.
+2. Provide the affected file path(s), a clear description of the issue, and any relevant context or reproduction details.
+3. If sensitive or confidential data is involved, please do not paste the raw sensitive content into public pages.
 
 ## Response Expectations
 
-维护者会尽量尽快完成以下动作：
+Maintainers will endeavor to take the following actions as promptly as possible:
 
-- 确认是否需要临时下线相关内容
-- 评估影响范围
-- 给出修复、删除或重写方案
+- Determine whether temporary removal or takedown of the affected content is necessary.
+- Assess the scope and impact of the reported issue.
+- Provide a remediation plan (redaction, deletion, or rewrite).
 
 ## Supported Versions
 
-当前仓库没有稳定版本分支策略，默认仅维护主分支上的最新公开内容。
+This repository does not maintain multiple release branches. Security patches and updates are applied exclusively to the latest revision of the `main` branch.

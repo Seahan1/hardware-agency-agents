@@ -1,90 +1,96 @@
-# Contributing
+# Contributing Guide
 
-感谢你为这个硬件 skill 仓库补充内容。这个仓库的目标不是堆积术语，而是沉淀可复用、边界清晰、适合真实工程协作的角色化 skill。
+[English](./CONTRIBUTING.md) | [简体中文](./CONTRIBUTING.zh-CN.md)
 
-## 提交前先确认
+Thank you for contributing to `hardware-agency-agents`. The goal of this repository is not to pile up abstract terminology, but to build a reusable, well-bounded library of role-based skills tailored for real engineering collaboration.
 
-- 你新增的内容对应一个真实且可独立承担任务的硬件岗位或子角色
-- 该 skill 与现有 skill 没有明显重复，只是命名不同
-- 文档强调工程约束、工作流程、交付物和适用场景，而不是泛化介绍
-- 不包含公司内部规范、客户资料、保密设计、受版权限制的截图或大段复制内容
+## Pre-Submission Checklist
 
-## Skill 文件要求
+- Your added content corresponds to a real hardware engineering role or specialized sub-role capable of taking ownership of tasks.
+- The skill does not duplicate an existing skill under a different name.
+- The document emphasizes engineering constraints, workflows, deliverables, and practical application boundaries, rather than generic textbook descriptions.
+- The submission contains no company-confidential designs, customer IP, proprietary documents, or copyright-infringing materials.
 
-每个 skill 当前以独立 Markdown 文件维护，建议放在最合适的方向目录下。
+## Skill File Requirements
 
-文件开头必须包含 YAML frontmatter，至少包括：
+Each skill is maintained in standard Codex / Claude Code / Antigravity CLI format as a dedicated directory containing a `SKILL.md` file:
+
+- English skills: `skills/<Category>/<skill-slug>/SKILL.md`
+- Chinese skills: `skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`
+
+The beginning of every `SKILL.md` must include valid YAML frontmatter containing at least:
 
 ```yaml
 ---
-name: 示例工程师
-description: 示例领域与任务协同 skill。用于典型任务、典型对象、常见问题、关键约束和交付物输出。
+name: example-hardware-engineer
+description: Role and collaboration skill for [domain]. Used for [typical tasks], [target objects], [common failure modes], [critical constraints], and [deliverables].
 color: teal
 ---
 ```
 
-要求如下：
+Requirements:
 
-- `name`：必须唯一，直接使用用户最容易搜索到的岗位名称
-- `description`：必须完整说明职责边界、技术重点和典型应用场景
-- `color`：可选但建议保留，与现有风格一致即可
+- `name`: Must be unique, lowercase, and hyphenated (e.g. `pcb-hardware-engineer`), exactly matching the skill's directory name.
+- `description`: Must clearly state role boundaries, core technical focus, and primary use cases.
+- `color`: Optional but recommended for visual consistency.
 
-## Description 写作规范
+## Description Guidelines
 
-每个 skill 的 `description` 建议统一采用 Agent 更容易触发的写法：
+Each skill's `description` should follow a standardized structure optimized for agent triggering:
 
 ```text
-[角色领域] skill。用于 [任务类型]、[典型对象]、[常见问题]、[关键约束] 和 [交付物]。
+[Role/Domain] skill. Used for [task types], [target objects], [common problems/failures], [critical constraints], and [deliverables].
 ```
 
-建议同时满足以下要求：
+Key guidelines:
 
-- 包含明确的领域词、任务词、对象词、问题词和输出词
-- 优先写用户会搜索的对象、故障现象、评审动作和输出结果
+- Include explicit domain terms, task keywords, hardware targets, failure modes, and deliverables.
+- Prioritize terms users search for: component types, symptoms, review actions, and engineering outputs.
 
-## 内容要求
+## Content Quality Standards
 
-- 以“工程判断框架”写作，而不是教科书式知识罗列
-- 强调输入条件、边界、失效机制、验证要求和交付结果
-- 避免空泛表达，如“需要注意稳定性”“注意 EMI 问题”
-- 尽量写成可执行的规则、流程和沟通方式
-- 不要使用占位文本、未完成标题或省略号式残缺内容
+- Frame guidance as an **engineering decision framework**, not a textbook catalog.
+- Emphasize input requirements, boundary conditions, failure mechanisms, verification gates, and deliverables.
+- Avoid vague hand-waving statements such as "ensure stability" or "pay attention to EMI issues".
+- Write executable rules, deterministic workflows, and structured communication protocols.
+- Avoid placeholder text, unfinished sections, or trailing ellipsis.
 
-## 命名与分组
+## Domain Grouping
+ 
+When adding a skill, maintain synchronized English and Chinese versions (`skills/<Category>/<skill-slug>/SKILL.md` and `skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`) categorized across the engineering domains:
 
-新增 skill 时，请优先复用现有目录体系：
+- `PCB and Board-Level Implementation` (`PCB 与板级实现方向`)
+- `Reliability EMC and Safety` (`可靠性 EMC 安规方向`)
+- `Embedded Hardware` (`嵌入式硬件方向`)
+- `Digital Analog and Mixed-Signal` (`数字与模拟混合信号方向`)
+- `Testing and Validation` (`测试与验证方向`)
+- `Power and Power Electronics` (`电源与功率电子方向`)
+- `Chip Platforms and Low-Level Board Co-Design` (`芯片平台与底层板级协同方向`)
+- `Communication and Interfaces` (`通信与接口方向`)
+- `Hardware Design Review Validation` (`硬件设计评审与验证`)
 
-- `PCB 与板级实现方向`
-- `可靠性 EMC 安规方向`
-- `嵌入式硬件方向`
-- `数字 : 模拟 : 混合信号方向`
-- `测试与验证方向`
-- `电源与功率电子方向`
-- `芯片平台与底层板级协同方向`
-- `通信与接口方向`
+If you believe a new domain directory is necessary, please explain in your PR:
 
-如果你认为必须新增一个新方向，请在 PR 描述中说明：
+- Why the existing domains are insufficient.
+- The boundary differences between the proposed domain and existing domains.
+- What future skills will be housed under the new domain.
 
-- 为什么现有目录不适合
-- 新方向与已有方向的边界差异
-- 预期后续还会容纳哪些 skill
+## Documentation & README Updates
 
-## README 更新要求
+If you add, delete, or rename a skill, please update the corresponding entries in `README.md` and `README.zh-CN.md`:
 
-如果你新增、删除或重命名了 skill，请同步更新 `README.md` 中的：
+- Overall skill statistics and badge counts.
+- Domain section counts.
+- Skill Index table links.
+- Selection recommendations where applicable.
 
-- 统计数量
-- 对应方向的小节计数
-- Skill Index 链接
-- 必要时的选型建议
+## Pull Request Guidelines
 
-## Pull Request 建议
+Keep each PR focused on a single logical change:
 
-一个 PR 最好只做一类事情：
+- Adding a new skill or a cohesive set of related skills.
+- Refining role boundaries or rule text.
+- Adjusting directory layout.
+- Fixing metadata or documentation links.
 
-- 新增一个或一组相关 skill
-- 修正文案和边界定义
-- 调整目录结构
-- 修复元数据或链接问题
-
-这样更方便评审和回滚。
+This makes reviews faster and rollbacks safer.
