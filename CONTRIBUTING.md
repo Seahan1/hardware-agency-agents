@@ -15,8 +15,8 @@ Thank you for contributing to `hardware-agency-agents`. The goal of this reposit
 
 Each skill is maintained in standard Codex / Claude Code / Antigravity CLI format as a dedicated directory containing a `SKILL.md` file:
 
-- English skills: `skills/<skill-name>/SKILL.md`
-- Chinese skills: `skills.zh-CN/<skill-name>/SKILL.md`
+- English skills: `skills/<Category>/<skill-slug>/SKILL.md`
+- Chinese skills: `skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`
 
 The beginning of every `SKILL.md` must include valid YAML frontmatter containing at least:
 
@@ -57,17 +57,17 @@ Key guidelines:
 
 ## Domain Grouping
  
-When adding a skill, maintain synchronized English and Chinese versions (`skills/<name>/SKILL.md` and `skills.zh-CN/<name>/SKILL.md`) categorized across the 8 engineering domains:
+When adding a skill, maintain synchronized English and Chinese versions (`skills/<Category>/<skill-slug>/SKILL.md` and `skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`) categorized across the engineering domains:
 
 - `PCB and Board-Level Implementation` (`PCB 与板级实现方向`)
 - `Reliability EMC and Safety` (`可靠性 EMC 安规方向`)
 - `Embedded Hardware` (`嵌入式硬件方向`)
-- `Digital Analog and Mixed-Signal` (`数字-模拟-混合信号方向`)
+- `Digital Analog and Mixed-Signal` (`数字与模拟混合信号方向`)
 - `Testing and Validation` (`测试与验证方向`)
 - `Power and Power Electronics` (`电源与功率电子方向`)
 - `Chip Platforms and Low-Level Board Co-Design` (`芯片平台与底层板级协同方向`)
 - `Communication and Interfaces` (`通信与接口方向`)
-- `Hardware Design Review and Validation` (`硬件设计评审与验证方向`)
+- `Hardware Design Review Validation` (`硬件设计评审与验证`)
 
 If you believe a new domain directory is necessary, please explain in your PR:
 

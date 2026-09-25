@@ -15,8 +15,8 @@
 
 每个 skill 均遵循 Codex / Claude Code / Antigravity CLI 标准格式，存放在独立目录下，文件统一命名为 `SKILL.md`：
 
-- 英文版 skill：`skills/<skill-name>/SKILL.md`
-- 中文版 skill：`skills.zh-CN/<skill-name>/SKILL.md`
+- 英文版 skill：`skills/<Category>/<skill-slug>/SKILL.md`
+- 中文版 skill：`skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`
 
 `SKILL.md` 文件开头必须包含 YAML frontmatter，至少包括：
 
@@ -57,17 +57,17 @@ color: teal
 
 ## 方向分组
  
-新增 skill 时，建议同步提交英文版与中文版（分别置于 `skills/<name>/SKILL.md` 与 `skills.zh-CN/<name>/SKILL.md`），归属于以下 8 个专业方向或硬件设计评审方向：
+新增 skill 时，建议同步提交英文版与中文版（分别置于 `skills/<Category>/<skill-slug>/SKILL.md` 与 `skills.zh-CN/<Category>/<Chinese_Name>/SKILL.md`），归属于以下专业方向或硬件设计评审方向：
 
 - `PCB 与板级实现方向` (`PCB and Board-Level Implementation`)
 - `可靠性 EMC 安规方向` (`Reliability EMC and Safety`)
 - `嵌入式硬件方向` (`Embedded Hardware`)
-- `数字-模拟-混合信号方向` (`Digital Analog and Mixed-Signal`)
+- `数字与模拟混合信号方向` (`Digital Analog and Mixed-Signal`)
 - `测试与验证方向` (`Testing and Validation`)
 - `电源与功率电子方向` (`Power and Power Electronics`)
 - `芯片平台与底层板级协同方向` (`Chip Platforms and Low-Level Board Co-Design`)
 - `通信与接口方向` (`Communication and Interfaces`)
-- `硬件设计评审与验证方向` (`Hardware Design Review and Validation`)
+- `硬件设计评审与验证` (`Hardware Design Review Validation`)
 
 如果你认为必须新增一个新方向，请在 PR 描述中说明：
 
