@@ -1,37 +1,39 @@
 # Code of Conduct
 
+[English](./CODE_OF_CONDUCT.md) | [简体中文](./CODE_OF_CONDUCT.zh-CN.md)
+
 ## Our Standard
 
-本仓库欢迎围绕硬件工程、skill 设计、文档结构和协作方式展开理性讨论。参与者应当以专业、具体、可验证的方式交流。
+This repository welcomes rational, constructive discussions centered on hardware engineering, skill design, documentation structure, and collaboration practices. Participants are expected to communicate in a professional, specific, and verifiable manner.
 
-我们期望所有贡献者：
+We expect all contributors to:
 
-- 尊重他人的技术判断和经验背景
-- 用事实、约束、测试结果和工程逻辑讨论问题
-- 对内容提出批评时，给出明确理由和改进方向
-- 避免人身攻击、羞辱、歧视、骚扰或挑衅性表达
+- Respect others' technical judgment and professional backgrounds.
+- Discuss problems using empirical facts, physical constraints, test data, and engineering logic.
+- When critiquing content, provide clear rationale and constructive directions for improvement.
+- Refrain from personal attacks, derogatory language, discrimination, harassment, or inflammatory remarks.
 
 ## Unacceptable Behavior
 
-以下行为不可接受：
+The following behaviors are unacceptable:
 
-- 人身攻击、辱骂、威胁或骚扰
-- 基于地区、职业、性别、身份或经验背景的歧视性言论
-- 明知包含保密资料、侵权内容或恶意代码仍故意提交
-- 反复发布与仓库主题无关的内容或破坏讨论秩序
+- Personal attacks, insults, threats, or harassment of any kind.
+- Discriminatory language based on region, profession, gender, identity, or level of experience.
+- Knowingly submitting confidential documents, copyright-infringing materials, or malicious code.
+- Repeatedly posting off-topic content or disrupting discussions.
 
 ## Enforcement
 
-仓库维护者可以根据情节采取以下措施：
+Repository maintainers may take appropriate actions based on the severity of the violation:
 
-- 要求修改讨论方式或提交内容
-- 关闭 issue、discussion 或 pull request
-- 暂时或永久限制参与仓库协作
+- Requesting changes to the tone, discussion conduct, or submitted content.
+- Closing issues, discussions, or pull requests.
+- Temporarily or permanently restricting access and participation in repository collaboration.
 
 ## Scope
 
-本行为准则适用于仓库内的 issue、pull request、discussion、review comment，以及其他明确与本仓库相关的协作场景。
+This Code of Conduct applies to issues, pull requests, discussions, review comments, and any other collaborative spaces directly related to this repository.
 
 ## Reporting
 
-如果你发现违规行为，或发现有人提交了不应公开的内容，请通过 [SECURITY.md](./SECURITY.md) 中说明的方式联系维护者。
+If you observe unacceptable behavior or discover unauthorized submissions of sensitive content, please contact the maintainers via the channels described in [SECURITY.md](./SECURITY.md).

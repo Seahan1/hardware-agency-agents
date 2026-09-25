@@ -1,35 +1,36 @@
 ---
 name: Skill request
-about: 申请新增一个 skill 或一个新方向
+about: Propose adding a new hardware engineering skill or domain category
 title: "[Skill Request] "
 labels: enhancement
 assignees: ""
 ---
 
-## 想新增的 skill
+## Proposed Skill Title
 
-请写出建议名称。
+Suggested role/skill title (English and Chinese if applicable).
 
-## 这个 skill 解决什么问题
+## Problem & Mission
 
-请说明它负责的任务边界、典型输入、输出结果和使用场景。
+Explain the primary engineering mission, role boundary, typical inputs, deliverables, and application scenarios for this skill.
 
-## 为什么现有 skill 不够
+## Why Existing Skills Are Insufficient
 
-请指出与当前仓库已有 skill 的差异，避免只是同义改名。
+Describe the key differences compared to the current 55 skills in the repository to prevent redundancy or synonym-based duplication.
 
-## 建议放入哪个方向
+## Target Domain
 
-- [ ] PCB 与板级实现方向
-- [ ] 可靠性 EMC 安规方向
-- [ ] 嵌入式硬件方向
-- [ ] 数字 : 模拟 : 混合信号方向
-- [ ] 测试与验证方向
-- [ ] 电源与功率电子方向
-- [ ] 芯片平台与底层板级协同方向
-- [ ] 通信与接口方向
-- [ ] 我认为需要新建方向
+- [ ] PCB and Board-Level Implementation
+- [ ] Reliability EMC and Safety
+- [ ] Embedded Hardware
+- [ ] Digital Analog and Mixed-Signal
+- [ ] Testing and Validation
+- [ ] Power and Power Electronics
+- [ ] Chip Platforms and Low-Level Board Co-Design
+- [ ] Communication and Interfaces
+- [ ] Hardware Design Review and Validation
+- [ ] Propose a new domain
 
-## 参考说明
+## Additional Context
 
-如果你有建议的职责定义、示例场景或边界约束，可以写在这里。
+Include any reference standards, workflow templates, or edge-case constraints that should be covered by this skill.
