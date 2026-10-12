@@ -292,11 +292,3 @@ GitHub Actions is configured to validate this repository on pushes to `main`, pu
 - whether both README indexes cover every skill in their language
 
 These workflows are only for repository quality checks. They do not automatically install skills into any local agent directory.
-## 🚀 Possible Next Steps
-
-If you continue expanding this repository, these are strong next improvements:
-
-- add a consistent naming and tagging system across domains
-- add cross-skill composition suggestions such as `STM32 + EMC + Validation`
-- keep the English and Chinese indexes synchronized
-- clarify primary vs secondary roles where skill boundaries overlap
