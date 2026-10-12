@@ -17,7 +17,6 @@ This repository is inspired by the organizational clarity of strong skill librar
 
 ## 📚 Table of Contents
 
-- [Why This Repo Exists](#-why-this-repo-exists)
 - [Quick Start](#-quick-start)
 - [Public Notes](#-public-notes)
 - [Overview](#-overview)
@@ -29,17 +28,6 @@ This repository is inspired by the organizational clarity of strong skill librar
 - [License](#-license)
 - [Contributing](#-contributing)
 - [GitHub Checks](#-github-checks)
-
-## 🧠 Why This Repo Exists
-
-Most AI systems can talk about electronics, but that does not mean they can reason like a real hardware engineer.
-
-This repository exists to narrow that gap:
-
-- turn generic AI assistance into role-based hardware reasoning
-- make constraints, failure mechanisms, verification logic, and deliverables explicit
-- reduce low-quality advice that ignores physics, manufacturability, EMC, safety, and production reality
-- provide reusable specialist roles for real board-level engineering workflows
 
 ## ⚡ Quick Start
 
