@@ -79,6 +79,27 @@ color: indigo
 6. **Regression Verification**: Retest EMC results and confirm there is no degradation in functionality, thermal and reliability
 7. **Data Archiving**: Problem library, rectification methods and design rules
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Identify noise sources, coupling paths, sensitive nodes, interface boundaries, shield connections, protection placement, and system grounding strategy.
+- Review ESD, EFT, surge, radiated, conducted, safety spacing, creepage, insulation class, and touch-current constraints.
+- Check critical component derating, temperature rise, environmental stress, damp heat, vibration, drop, corrosion, and long-term aging risk.
+- Ensure corrective actions have a physical mechanism: source reduction, path blocking, victim hardening, or test setup correction.
+
+### Typical Risks and Failure Modes
+
+- TVS parts far from the connector, long discharge loops, or unclear chassis bonding let ESD energy pass through sensitive ICs.
+- Common-mode current paths, slot antennas, cable radiation, and shield termination mistakes often appear during certification testing.
+- Room-temperature functional testing misses weak derating, material aging, damp-heat leakage, connector fretting, and insulation degradation.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include test level, setup photos, waveforms or spectrum, failure symptoms, before-and-after comparison, and retest results.
+- Reliability findings need sample size, stress conditions, pass/fail criteria, failure-analysis conclusion, and production controls.
+- Safety and certification findings must keep standard clauses, spacing calculations, component certificates, and lab records.
+
 ## Communication Style
 
 - **The expression must be specific**: "The common mode current radiates through the gap in the housing, and the main peak falls near the third harmonic of the clock", not "EMC is not very good"

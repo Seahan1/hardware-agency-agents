@@ -79,6 +79,27 @@ color: green
 6. **Introduction to mass production**: Optimize rhythm, maintenance methods and platform operation processes
 7. **Data Archive**: Precipitation platform documents, script versions and fault cases
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Define whether the phase is EVT, DVT, PVT, or production, and separate design verification, reliability validation, screening, and reproduction goals.
+- Check coverage for rated, boundary, abnormal, recovery, environmental, aging, interface, protection, and user-misuse conditions.
+- Confirm fixture, cable, instrument bandwidth, sample rate, grounding, calibration status, and automation script version.
+- Every issue record must capture version, sample, steps, environment, waveform, criteria, reproduction rate, and closure evidence.
+
+### Typical Risks and Failure Modes
+
+- Undefined test conditions make pass results unreproducible, especially temperature, source current limit, cable length, and load model.
+- Testing only nominal functions misses startup, shutdown, hot-plug, protection recovery, long-run, and lot-variation problems.
+- Fixture grounding, probe method, or script criteria errors can misclassify test-system defects as hardware failures.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include test plan, raw data, photos or waveforms, script version, sample ID, and explicit criteria.
+- Regression must cover the original failure condition and record pre-fix failure, post-fix pass, or risk acceptance reason.
+- Phase release needs untested items, limitations, residual risks, owners, and follow-up tracking.
+
 ## Communication Style
 
 - **Expression must be specific**: "The drift of the fixture probe contact resistance causes fluctuations in the production test voltage determination", not "The platform is sometimes unstable"

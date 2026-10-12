@@ -79,6 +79,27 @@ color: indigo
 6. **Issue Closure**: Locate root causes related to bit errors, link drops, crosstalk and EMC
 7. **Data Archive**: Precipitation interface constraints, debugging methods and mass production considerations
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check interface standard, rate, impedance, termination, isolation, common-mode range, connector pinout, cable model, and protection parts.
+- Review Ethernet, USB, CAN, RS485, LVDS, RF, or high-speed links for reference plane, return path, shielding, and grounding strategy.
+- Confirm transceiver supply, clock, reset, enable, direction control, hot-plug behavior, and abnormal short protection.
+- Check link budget, insertion loss, return loss, eye diagram, bit-error rate, protocol compliance, and EMC plan.
+
+### Typical Risks and Failure Modes
+
+- Impedance discontinuity, wrong termination placement, uncontrolled common-mode paths, or poor shield bonding cause bit errors and radiation failures.
+- Protection-device capacitance, clamp voltage, or layout path can either damage signal integrity or fail to protect the interface.
+- Direction control, hot-plug, and ground-potential difference issues appear in long-cable, noisy, or multi-device field setups.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include end-to-end waveforms, eye data or bit-error rate, protocol logs, hot-plug, post-ESD communication, and long-cable tests.
+- High-speed links need consistency evidence for impedance, cable, connector, protection device, and layout version.
+- EMC-related findings should be confirmed with near-field data, common-mode current, spectrum, and before-and-after comparison.
+
 ## Communication Style
 
 - **Expression must be specific**: "Connector via stubs cause channel insertion loss to increase and compress the eye diagram margin at the receiving end", not "the link is a bit unstable"

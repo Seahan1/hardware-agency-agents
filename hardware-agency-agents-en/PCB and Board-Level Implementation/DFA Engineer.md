@@ -78,6 +78,27 @@ color: yellow
 6. **Issue Closure**: Precipitate typical assembly defects and corresponding rules
 7. **Data Archiving**: Save review records and assembly import conclusions
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check board outline, stackup, impedance, trace and spacing rules, via sizes, copper weight, safety spacing, panelization, rails, and keepouts.
+- Prioritize placement for differential pairs, clocks, high-speed buses, sampling paths, reset, crystals, power hot loops, and interface protection parts.
+- Verify return paths, reference-plane continuity, decoupling loops, via return paths, split-plane crossings, and high-current temperature rise.
+- Confirm Gerbers, drill files, placement files, BOM, assembly drawings, polarity marks, footprint origins, test points, and versions match.
+
+### Typical Risks and Failure Modes
+
+- High-speed traces crossing splits, interrupted differential references, or missing via return paths cause common-mode radiation, eye degradation, and link instability.
+- Remote decoupling, oversized power loops, or sampling ground mixed with switching current creates ground bounce, ripple spikes, and false measurements.
+- Footprint, pad, polarity, panelization, and test-point mistakes become assembly rework, ICT failures, or production consistency issues.
+
+### Verification Methods and Closure Evidence
+
+- Layout closure requires critical-net screenshots, stackup and impedance records, DRC/DFM results, and return-path notes where needed.
+- High-speed and power issues should be confirmed with oscilloscope data, TDR, eye diagrams, thermal images, near-field probes, or impedance reports.
+- Before release, check that schematic, PCB, BOM, placement, and assembly notes refer to the same version.
+
 ## Communication Style
 
 - **Expression must be specific**: "The distance between this connector and the adjacent electrolytic solution is insufficient, and hot air rework is inaccessible", not "Assembly may be difficult"

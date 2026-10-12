@@ -80,6 +80,27 @@ color: cyan
 6. **Problem closure**: Locate coupling paths, accuracy loss and sources of synchronization anomalies
 7. **Data output**: Archive design constraints, test conclusions and mass production considerations
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check signal-chain gain, bandwidth, noise, bias, input protection, common-mode range, sampling rate, reference source, and error budget.
+- Review digital timing, impedance, termination, crosstalk, reference planes, clock jitter, and power-integrity constraints.
+- Confirm analog, digital, and power partitioning follows real current paths rather than mechanical separation.
+- Check low-power modes, wake sources, leakage paths, sensor supply, and measurement windows against the system power budget.
+
+### Typical Risks and Failure Modes
+
+- Ignoring op-amp swing, input common-mode range, ADC sampling drive, or reference noise prevents the design from meeting accuracy targets.
+- Fast digital edges coupled into analog front ends, references, or sampling clocks show up as fixed-frequency noise and sampling glitches.
+- Low-power designs that only disable main rails miss pullups, protection leakage, sensor back-feed, and debug-interface leakage.
+
+### Verification Methods and Closure Evidence
+
+- Analog paths should provide error budget, noise spectrum, linearity, drift, full-scale, and boundary-input tests.
+- Digital paths should provide timing margin, eye diagram or waveform, termination check, crosstalk observation, and rail-noise records.
+- Low-power findings need current by mode, wake time, leakage-path isolation, and temperature-boundary data.
+
 ## Communication Style
 
 - **Expression must be specific**: "MCU switching current flows back through the reference ground, raising the ADC reference noise", not "analog and digital interference"

@@ -78,6 +78,27 @@ color: teal
 6. **Regression Verification**: Track customer verification results and add further suggestions
 7. **Data Archive**: precipitation cases, FAQ and reference design revisions
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check SoC/FPGA/CPLD rails, voltage tolerance, sequencing, configuration mode, reset, clocks, JTAG, and boot media.
+- Review DDR, SerDes, parallel buses, high-speed IO, multi-voltage banks, reference voltages, and termination networks.
+- Confirm reference-design differences, vendor errata, package escape, thermal path, PMIC configuration, and firmware boot assumptions.
+- Check configuration download, production programming, secure boot, version identification, and board-level debug access.
+
+### Typical Risks and Failure Modes
+
+- Incorrect power sequence, reset release, configuration-pin defaults, or boot-media selection can stop platform boot and make debug costly.
+- Bank voltage, IO standard, termination, or reference-voltage mismatch causes interface damage, bit errors, or temperature-boundary failures.
+- DDR/SerDes constraints without simulation or layout evidence often fail at higher rate, across lots, or during long-run testing.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include power sequencing, reset, configuration status, JTAG connection, boot log, and critical clock waveforms.
+- High-speed interfaces need constraint files, layout screenshots, simulation or eye data, bit-error rate, and temperature-boundary results.
+- Platform release should preserve reference-design differences, errata handling, PMIC configuration, and production programming flow.
+
 ## Communication Style
 
 - **Expression must be specific**: "The customer's current input ripple exceeds the stable boundary of the chip loop, and typical applications cannot directly cover this scenario" rather than "Application conditions may not be suitable"

@@ -80,6 +80,27 @@ color: purple
 6. **Joint debugging verification**: Verify charging and discharging, standby, fault cut-off, insulation and thermal management behaviors
 7. **Data Archive**: Precipitation system constraints, test conclusions and mass production maintenance precautions
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check each rail for input range, output accuracy, continuous current, peak current, startup timing, shutdown behavior, and load-step conditions.
+- Review controller, MOSFET, diode, inductor, sense resistor, output capacitor, and magnetics limits for voltage, current, temperature rise, SOA, and derating.
+- Verify compensation network, output capacitor ESR, operating-mode transitions, light-load noise, ripple target, and loop-response validation plan.
+- Inspect layout evidence for hot loops, switch nodes, feedback sense points, power ground, signal ground, input and output capacitor loops, and EMI filters.
+
+### Typical Risks and Failure Modes
+
+- Inductor saturation, MOSFET avalanche, sense-resistor overheating, or diode reverse recovery can turn boundary conditions into production failures.
+- Feedback routed near high dv/dt nodes, oversized hot loops, or broken input-capacitor loops show up as ripple spikes, false protection trips, or EMI failures.
+- Compensation based only on typical values can create audible noise, oscillation, or transient overshoot across temperature, load, and capacitor variation.
+
+### Verification Methods and Closure Evidence
+
+- Cover minimum and maximum input, no load, light load, full load, peak load, thermal steady state, cold start, and short-circuit conditions.
+- Closure evidence should include startup waveforms, ripple bandwidth notes, load-step data, efficiency, temperature rise, loop response, and protection logs.
+- For EMI or thermal risk, keep spectrum data, near-field findings, thermal images, before-and-after comparisons, and final BOM/layout versions.
+
 ## Communication Style
 
 - **Expression must be specific**: "The precharge path resistance does not match the timing, causing the bus charging time to exceed the contactor closing window", not "precharge is a bit slow"

@@ -51,6 +51,12 @@
    curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
    ```
 
+   安装指定版本时，可以设置 `HARDWARE_AGENCY_REF`：
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | HARDWARE_AGENCY_REF=v1.0.0 zsh -s -- codex
+   ```
+
    Claude Code：
 
    ```zsh
@@ -290,11 +296,12 @@ hardware-agency-agents/
 
 ## ✅ GitHub 自动检查
 
-仓库已配置 GitHub Actions，在 Pull Request 和手动触发时会检查：
+仓库已配置 GitHub Actions，在推送到 `main`、Pull Request 和手动触发时会检查：
 
 - skill 文档 frontmatter 是否完整
 - `name` 是否重复
 - `README.md` 与 `README.zh-CN.md` 中的本地 skill 链接是否都指向真实文件
+- 两个 README 索引是否覆盖对应语言的全部 skill
 
 这些工作流只负责仓库质量校验，不会把 skill 自动安装到任何 agent 本地目录。
 

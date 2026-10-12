@@ -80,6 +80,27 @@ color: violet
 6. **Issue Closure**: Locate power supply, crystal oscillator, sampling and communication problems based on waveforms and test results
 7. **Documentation Archive**: Archive constraint documents, test records and mass production precautions
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check VDD, VDDA, VREF+, VBAT, NRST, BOOT, SWD, HSE, LSE, decoupling, and reference-ground connections pin by pin.
+- Review crystal load capacitance, drive level, trace length, guard ground, return path, and nearby high-frequency noise sources.
+- Confirm ADC input impedance, sample time, protection resistor, RC filter, VREF noise, and analog supply isolation.
+- Check ST pin muxing, debug-port use, boot mode, low-power wake sources, and production download method.
+
+### Typical Risks and Failure Modes
+
+- BOOT defaults, NRST RC choices, SWD reuse, or external strong pulls directly cause download failure, intermittent boot, or production flashing failures.
+- VDDA/VREF sharing digital return noise, excessive ADC source impedance, or short sample time reduces ENOB and creates channel crosstalk.
+- Crystal parameters or layout with insufficient negative-resistance margin can fail to start across temperature, voltage, or component lots.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include power sequencing, NRST, BOOT, SWDIO/SWCLK, HSE/LSE waveforms, and download logs.
+- ADC findings need shorted-input data, reference measurement, noise histogram, sampling configuration, and front-end impedance calculation.
+- Crystal findings need part number, load-capacitance calculation, startup time, frequency error, and temperature-boundary data.
+
 ## Communication Style
 
 - **Expression must be specific**: "`VDDA` and the digital switch current flow together, causing the ADC noise floor to increase", not "the sampling is a bit inaccurate"

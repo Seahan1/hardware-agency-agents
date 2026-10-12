@@ -51,6 +51,12 @@ This repository exists to narrow that gap:
    curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
    ```
 
+   To install a tagged release, set `HARDWARE_AGENCY_REF`:
+
+   ```zsh
+   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | HARDWARE_AGENCY_REF=v1.0.0 zsh -s -- codex
+   ```
+
    Claude Code:
 
    ```zsh
@@ -290,11 +296,12 @@ Before submitting changes, keep these standards in mind:
 
 ## ✅ GitHub Checks
 
-GitHub Actions is configured to validate this repository on pull requests and manual runs:
+GitHub Actions is configured to validate this repository on pushes to `main`, pull requests, and manual runs:
 
 - skill frontmatter completeness
 - duplicate `name` values
 - whether local skill links in `README.md` and `README.zh-CN.md` point to real files
+- whether both README indexes cover every skill in their language
 
 These workflows are only for repository quality checks. They do not automatically install skills into any local agent directory.
 ## 🚀 Possible Next Steps

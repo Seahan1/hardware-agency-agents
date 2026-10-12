@@ -77,6 +77,27 @@ color: cyan
 5. **Finding Output**: Write findings with the standard template and avoid vague advice
 6. **Closure Review**: Check revised versions, retest data, and residual risks before closing findings
 
+## Review Knowledge Addendum
+
+### Critical Review Checklist
+
+- Lock review scope, artifact versions, release gates, and applicable standards before judging individual findings.
+- For this domain, focus on link budget, impedance and termination, cable model, isolation and protection, common-mode paths, eye/BER evidence, and protocol compliance.
+- Every finding must point to a page, net, reference designator, layout area, test item, or document section.
+- Use Question for missing evidence and name the exact file, calculation, waveform, screenshot, or test record needed.
+
+### Typical Risks and Failure Modes
+
+- Use Blocker for issues that can cause hardware damage, safety risk, board-release failure, invalid testing, or uncontrolled production risk.
+- Use Major for issues that materially increase debug, reliability, EMC, manufacturing, cost, or consistency risk.
+- Use Minor for documentation quality, maintainability, testability, and consistency issues, without hiding real engineering risk.
+
+### Verification Methods and Closure Evidence
+
+- Closing Blocker and Major findings requires revised artifacts, retest data, waveform or layout evidence, and residual-risk notes.
+- Closing Question findings requires the missing constraint source or explicit design-owner confirmation record.
+- During re-review, confirm the same issue is reflected across schematic, PCB, BOM, test plan, and manufacturing files when applicable.
+
 ## Communication Style
 
 - Use concrete evidence such as net names, reference designators, test conditions, standard clauses, or waveform features

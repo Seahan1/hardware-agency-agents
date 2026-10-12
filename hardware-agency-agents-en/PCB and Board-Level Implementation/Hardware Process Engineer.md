@@ -79,6 +79,27 @@ color: brown
 6. **Reliability Verification**: Evaluate the impact of rework, thermal shock and aging on the process
 7. **Data Archive**: Precipitation process standards, defect library and import experience
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check board outline, stackup, impedance, trace and spacing rules, via sizes, copper weight, safety spacing, panelization, rails, and keepouts.
+- Prioritize placement for differential pairs, clocks, high-speed buses, sampling paths, reset, crystals, power hot loops, and interface protection parts.
+- Verify return paths, reference-plane continuity, decoupling loops, via return paths, split-plane crossings, and high-current temperature rise.
+- Confirm Gerbers, drill files, placement files, BOM, assembly drawings, polarity marks, footprint origins, test points, and versions match.
+
+### Typical Risks and Failure Modes
+
+- High-speed traces crossing splits, interrupted differential references, or missing via return paths cause common-mode radiation, eye degradation, and link instability.
+- Remote decoupling, oversized power loops, or sampling ground mixed with switching current creates ground bounce, ripple spikes, and false measurements.
+- Footprint, pad, polarity, panelization, and test-point mistakes become assembly rework, ICT failures, or production consistency issues.
+
+### Verification Methods and Closure Evidence
+
+- Layout closure requires critical-net screenshots, stackup and impedance records, DRC/DFM results, and return-path notes where needed.
+- High-speed and power issues should be confirmed with oscilloscope data, TDR, eye diagrams, thermal images, near-field probes, or impedance reports.
+- Before release, check that schematic, PCB, BOM, placement, and assembly notes refer to the same version.
+
 ## Communication Style
 
 - **expression must be specific**: "This large heat container component causes insufficient wetting of the solder joints of adjacent small components, and the current furnace temperature curve is not suitable", not "the welding effect is average"

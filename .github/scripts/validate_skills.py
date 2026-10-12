@@ -7,17 +7,11 @@ from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[2]
-README = ROOT / "README.md"
-SKILL_DIR_NAMES = {
-    "PCB 与板级实现方向",
-    "可靠性 EMC 安规方向",
-    "嵌入式硬件方向",
-    "数字 : 模拟 : 混合信号方向",
-    "测试与验证方向",
-    "电源与功率电子方向",
-    "芯片平台与底层板级协同方向",
-    "通信与接口方向",
-}
+SKILL_ROOTS = (
+    ROOT / "hardware-agency-agents-cn",
+    ROOT / "hardware-agency-agents-en",
+    ROOT / "hardware-design-review-validation",
+)
 
 
 def fail(message: str) -> None:
@@ -48,11 +42,11 @@ def parse_frontmatter(text: str, path: Path) -> dict[str, str]:
 def validate_skills() -> list[Path]:
     skill_files = sorted(
         path
-        for path in ROOT.glob("*/*.md")
-        if path.parent.name in SKILL_DIR_NAMES
+        for skill_root in SKILL_ROOTS
+        for path in skill_root.rglob("*.md")
     )
     if not skill_files:
-        fail("No skill markdown files found under first-level directories")
+        fail("No skill markdown files found under the configured skill roots")
 
     seen_names: dict[str, Path] = {}
     for path in skill_files:
@@ -72,14 +66,15 @@ def validate_skills() -> list[Path]:
     return skill_files
 
 
-def validate_readme(skill_files: list[Path]) -> None:
-    if not README.exists():
-        fail("README.md is missing")
+def validate_readme(readme: Path, skill_files: list[Path]) -> None:
+    if not readme.exists():
+        fail(f"{readme.name} is missing")
 
-    text = README.read_text(encoding="utf-8")
+    text = readme.read_text(encoding="utf-8")
     links = re.findall(r"\]\((\.\/[^)]+\.md)\)", text)
     expected = {path.relative_to(ROOT).as_posix() for path in skill_files}
     found_local_skills = set()
+    seen_local_skills = set()
 
     for link in links:
         relative = unquote(link[2:])
@@ -87,25 +82,41 @@ def validate_readme(skill_files: list[Path]) -> None:
         try:
             target.relative_to(ROOT)
         except ValueError:
-            fail(f"README.md contains a link outside the repository: {link}")
+            fail(f"{readme.name} contains a link outside the repository: {link}")
         if not target.exists():
-            fail(f"README.md points to a missing file: {link}")
+            fail(f"{readme.name} points to a missing file: {link}")
         path_in_repo = target.relative_to(ROOT).as_posix()
         if path_in_repo in expected:
+            if path_in_repo in seen_local_skills:
+                fail(f"{readme.name} links to the same skill more than once: {link}")
+            seen_local_skills.add(path_in_repo)
             found_local_skills.add(path_in_repo)
 
     missing = sorted(expected - found_local_skills)
     if missing:
         fail(
-            "README.md is missing links for these skill files: "
+            f"{readme.name} is missing links for these skill files: "
             + ", ".join(missing)
         )
 
 
 def main() -> None:
     skill_files = validate_skills()
-    validate_readme(skill_files)
-    print(f"Validated {len(skill_files)} skill files and README links successfully.")
+    english_files = [
+        path
+        for path in skill_files
+        if path.is_relative_to(ROOT / "hardware-agency-agents-en")
+        or path.is_relative_to(ROOT / "hardware-design-review-validation" / "en")
+    ]
+    chinese_files = [
+        path
+        for path in skill_files
+        if path.is_relative_to(ROOT / "hardware-agency-agents-cn")
+        or path.is_relative_to(ROOT / "hardware-design-review-validation" / "cn")
+    ]
+    validate_readme(ROOT / "README.md", english_files)
+    validate_readme(ROOT / "README.zh-CN.md", chinese_files)
+    print(f"Validated {len(skill_files)} skill files and both README indexes successfully.")
 
 
 if __name__ == "__main__":

@@ -79,6 +79,27 @@ color: orange
 6. **Issue Closure**: Locate the root causes of malfunction, protection misjudgment and power link anomalies
 7. **Data Archive**: Precipitation system interface, test methods and mass production constraints
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check MCU/MPU power domains, sequencing, reset, boot, debug interface, clock sources, memory, and key pin defaults.
+- Review UART, SPI, I2C, CAN, RS485, USB, Ethernet, IO expansion, and isolated interfaces for level, termination, protection, and direction control.
+- Confirm analog sampling, references, sensor supplies, ground return, filters, and calibration paths match firmware configuration.
+- Check debug test points, production download, FCT access, fault logging, version identification, and field-service entry points.
+
+### Typical Risks and Failure Modes
+
+- Floating boot pins, early reset release, failed oscillators, or debug pins overloaded by peripherals cause unstable bring-up or download failures.
+- Level mismatch, direction-control timing errors, or missing isolated supplies cause communication faults, latch-up, or field damage.
+- Firmware configuration mismatched with pullups, pin muxing, sample time, or power sequencing creates intermittent failures.
+
+### Verification Methods and Closure Evidence
+
+- Bring-up evidence should record rail voltages, reset, boot state, current, clocks, debug handshake, and basic peripheral waveforms.
+- Interface closure should cover boundary baud rate, bus loading, hot-plug, post-ESD communication, abnormal power loss, and recovery behavior.
+- Before production, keep the download flow, FCT items, pin table, firmware configuration version, and critical waveforms.
+
 ## Communication Style
 
 - **Expression must be specific**: "The input sampling and relay driving share the same ground, resulting in misjudgment of status", not "the control logic is a bit messy"

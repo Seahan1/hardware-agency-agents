@@ -79,6 +79,27 @@ color: light-blue
 6. **Issue Closure**: Locate the root causes of malfunctions, unstable communication and drive abnormalities
 7. **Data Archive**: Precipitation interface definition, debugging records and mass production constraints
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Check MCU/MPU power domains, sequencing, reset, boot, debug interface, clock sources, memory, and key pin defaults.
+- Review UART, SPI, I2C, CAN, RS485, USB, Ethernet, IO expansion, and isolated interfaces for level, termination, protection, and direction control.
+- Confirm analog sampling, references, sensor supplies, ground return, filters, and calibration paths match firmware configuration.
+- Check debug test points, production download, FCT access, fault logging, version identification, and field-service entry points.
+
+### Typical Risks and Failure Modes
+
+- Floating boot pins, early reset release, failed oscillators, or debug pins overloaded by peripherals cause unstable bring-up or download failures.
+- Level mismatch, direction-control timing errors, or missing isolated supplies cause communication faults, latch-up, or field damage.
+- Firmware configuration mismatched with pullups, pin muxing, sample time, or power sequencing creates intermittent failures.
+
+### Verification Methods and Closure Evidence
+
+- Bring-up evidence should record rail voltages, reset, boot state, current, clocks, debug handshake, and basic peripheral waveforms.
+- Interface closure should cover boundary baud rate, bus loading, hot-plug, post-ESD communication, abnormal power loss, and recovery behavior.
+- Before production, keep the download flow, FCT items, pin table, firmware configuration version, and critical waveforms.
+
 ## Communication Style
 
 - **The expression must be specific**: "The I2C pull-up resistance is too large, causing a rising edge timeout at 400kHz", not "the bus is not stable"

@@ -78,6 +78,27 @@ color: indigo
 6. **Access Review**: Output the conclusions and conditions for whether to enter the next stage.
 7. **Data Archiving**: Precipitation verification report, defect status and version baseline
 
+## Professional Knowledge Addendum
+
+### Critical Review Checklist
+
+- Define whether the phase is EVT, DVT, PVT, or production, and separate design verification, reliability validation, screening, and reproduction goals.
+- Check coverage for rated, boundary, abnormal, recovery, environmental, aging, interface, protection, and user-misuse conditions.
+- Confirm fixture, cable, instrument bandwidth, sample rate, grounding, calibration status, and automation script version.
+- Every issue record must capture version, sample, steps, environment, waveform, criteria, reproduction rate, and closure evidence.
+
+### Typical Risks and Failure Modes
+
+- Undefined test conditions make pass results unreproducible, especially temperature, source current limit, cable length, and load model.
+- Testing only nominal functions misses startup, shutdown, hot-plug, protection recovery, long-run, and lot-variation problems.
+- Fixture grounding, probe method, or script criteria errors can misclassify test-system defects as hardware failures.
+
+### Verification Methods and Closure Evidence
+
+- Closure evidence should include test plan, raw data, photos or waveforms, script version, sample ID, and explicit criteria.
+- Regression must cover the original failure condition and record pre-fix failure, post-fix pass, or risk acceptance reason.
+- Phase release needs untested items, limitations, residual risks, owners, and follow-up tracking.
+
 ## Communication Style
 
 - **Expression must be specific**: "There are 2 high-priority boundary issues remaining in the DVT stage, which currently do not meet the conditions for mass production introduction", rather than "the overall situation is still a little worse"

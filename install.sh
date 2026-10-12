@@ -5,11 +5,11 @@ target="${1:-codex}"
 
 case "$target" in
   codex)
-    skills_dir="$HOME/.codex/skills"
+    skills_dir="${HARDWARE_AGENCY_SKILLS_DIR:-$HOME/.codex/skills}"
     app_name="Codex"
     ;;
   claude-code|claude)
-    skills_dir="$HOME/.claude/skills"
+    skills_dir="${HARDWARE_AGENCY_SKILLS_DIR:-$HOME/.claude/skills}"
     app_name="Claude Code"
     ;;
   *)
@@ -18,8 +18,12 @@ case "$target" in
     ;;
 esac
 
-repo_dir="$(mktemp -d)/hardware-agency-agents"
-git clone --depth 1 https://github.com/Seahan1/hardware-agency-agents.git "$repo_dir"
+temp_root="$(mktemp -d)"
+trap 'rm -rf -- "$temp_root"' EXIT
+repo_dir="$temp_root/hardware-agency-agents"
+repo_url="${HARDWARE_AGENCY_REPOSITORY:-https://github.com/Seahan1/hardware-agency-agents.git}"
+repo_ref="${HARDWARE_AGENCY_REF:-main}"
+git clone --branch "$repo_ref" --depth 1 "$repo_url" "$repo_dir"
 cd "$repo_dir"
 
 find hardware-agency-agents-cn hardware-agency-agents-en hardware-design-review-validation -name '*.md' -type f | while IFS= read -r file; do
