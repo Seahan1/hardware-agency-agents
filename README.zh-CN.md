@@ -75,7 +75,7 @@
 
 ## 📦 仓库概览
 
-- 47 个硬件角色 skill，加 16 个硬件设计评审 skill，对应中英文两套文件
+- 48 个硬件角色 skill，加 16 个硬件设计评审 skill，对应中英文两套文件
 - 8 个专业方向
 - 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
 - 适合用于方案评审、原理图检查、PCB 约束梳理、硬件设计评审、调试定位、验证策划、量产导入与跨团队协作
@@ -160,7 +160,7 @@ hardware-agency-agents/
 | [硬件可靠性工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 降额、寿命、温升、应力与 MTBF 相关设计方法 |
 | [认证工程师（CE/FCC/UL等）](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E8%AE%A4%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88CE_FCC_UL%E7%AD%89%EF%BC%89.md) | 法规认证资料、测试配合与整改闭环 |
 
-### 嵌入式硬件方向（7）
+### 嵌入式硬件方向（8）
 
 | Skill | 定位 |
 | --- | --- |
@@ -168,6 +168,7 @@ hardware-agency-agents/
 | [单片机硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 单片机控制类外围设计、总线、电平与保护 |
 | [嵌入式硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU/MPU 板级系统开发、接口、电源与联调 |
 | [嵌入式系统硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高复杂度嵌入式平台、DDR、Flash、总线与时序设计 |
+| [日志分析助手](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 长日志本地筛选、时间戳对齐、成功与失败运行的差异定位 |
 | [工控硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B7%A5%E6%8E%A7%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 工业现场抗干扰、隔离、浪涌、防雷与宽温设计 |
 | [控制板硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E6%8E%A7%E5%88%B6%E6%9D%BF%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 控制主板与功能板设计、驱动保护与联调 |
 | [自动化控制硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A7%E5%88%B6%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 自动化设备控制硬件、IO、继电器、工业总线与驱动采集 |

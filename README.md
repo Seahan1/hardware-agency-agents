@@ -74,7 +74,7 @@ Suggested starting points:
 
 ## 📦 Overview
 
-- 47 hardware role skills plus 16 hardware design review skills with English and Chinese versions
+- 48 hardware role skills plus 16 hardware design review skills with English and Chinese versions
 - 8 engineering domains
 - Coverage across PCB implementation, embedded hardware, power, EMC/compliance, validation, SoC/FPGA platforms, and communication interfaces
 - Suitable for schematic review, PCB constraint analysis, hardware design review, debug work, validation planning, and production-readiness discussions
@@ -159,7 +159,7 @@ Notes:
 | [Hardware Reliability Engineer](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Hardware%20Reliability%20Engineer.md) | Derating, lifetime, thermal stress, environmental robustness, and MTBF-related methods |
 | [Certification Engineer (CE FCC UL and More)](./hardware-agency-agents-en/Reliability%20EMC%20and%20Safety/Certification%20Engineer%20-%20CE%20FCC%20UL%20and%20More.md) | Regulatory certification documents, lab coordination, and corrective support |
 
-### Embedded Hardware (7)
+### Embedded Hardware (8)
 
 | Skill | Focus |
 | --- | --- |
@@ -167,6 +167,7 @@ Notes:
 | [Microcontroller Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Microcontroller%20Hardware%20Engineer.md) | Single-chip control hardware, buses, logic levels, pull-up/down handling, and protection |
 | [Embedded Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Embedded%20Hardware%20Engineer.md) | Board-level embedded hardware with MCU/MPU peripherals, interfaces, power, and joint debug |
 | [Embedded Systems Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Embedded%20Systems%20Hardware%20Engineer.md) | Complex embedded platforms, DDR, Flash, buses, timing, and system architecture |
+| [Log Analysis Assistant](./hardware-agency-agents-en/Embedded%20Hardware/Embedded%20Log%20Analysis%20Engineer.md) | Local filtering of large logs, timestamp alignment, and comparison of successful and failed runs |
 | [Industrial Control Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Industrial%20Control%20Hardware%20Engineer.md) | Industrial anti-interference, isolation, surge, lightning, and wide-temperature design |
 | [Control Board Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Control%20Board%20Hardware%20Engineer.md) | Controller main boards, functional boards, drive/protection design, and bring-up |
 | [Automation Control Hardware Engineer](./hardware-agency-agents-en/Embedded%20Hardware/Automation%20Control%20Hardware%20Engineer.md) | Automation control hardware, IO, relays, industrial buses, drives, and sensing |
