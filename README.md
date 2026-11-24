@@ -51,6 +51,16 @@ This repository is inspired by the organizational clarity of strong skill librar
    curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
    ```
 
+   On Windows, clone the repository and run the PowerShell installer:
+
+   ```powershell
+   git clone https://github.com/Seahan1/hardware-agency-agents.git
+   cd hardware-agency-agents
+   .\install.ps1 codex
+   ```
+
+   For Claude Code, run `.\install.ps1 claude-code`. Set `HARDWARE_AGENCY_REF` to install a specific branch or tag.
+
 2. Pick the closest skill for your task from the index below.
 3. Read that skill as the primary engineering role.
 4. Add one or two adjacent skills when the task crosses domains.
@@ -112,7 +122,7 @@ hardware-agency-agents/
 │   ├── PCB 与板级实现方向/
 │   ├── 可靠性 EMC 安规方向/
 │   ├── 嵌入式硬件方向/
-│   ├── 数字 : 模拟 : 混合信号方向/
+│   ├── 数字-模拟-混合信号方向/
 │   ├── 测试与验证方向/
 │   ├── 电源与功率电子方向/
 │   ├── 芯片平台与底层板级协同方向/
